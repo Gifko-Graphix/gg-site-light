@@ -1,3 +1,3 @@
 # GG Website Light Variant
 
-Hosted live at [https://gglight.xyz]()
+Hosted live at [http://gglight.xyz]()
