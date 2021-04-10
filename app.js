@@ -6,7 +6,7 @@ const fs = require("fs");
 
 
 mongoose.connect(`mongodb+srv://admin:${process.env.PASSWD}@gg-cluster0.yuzpe.mongodb.net/websiteDB?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
-console.log(process.env.PASSWD)
+
 
 //create schemas
 
