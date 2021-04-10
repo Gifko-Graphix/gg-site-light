@@ -4,8 +4,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const fs = require("fs");
 
-mongoose.connect("mongodb+srv://admin-gifkographix:5ds5lazt2rg1b3TH@gg-cluster0.yuzpe.mongodb.net/websiteDB?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
+mongoose.connect(`mongodb+srv://admin:${process.env.PASSWD}@gg-cluster0.yuzpe.mongodb.net/websiteDB?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+console.log(process.env.PASSWD)
 
 //create schemas
 
