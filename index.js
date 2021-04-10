@@ -15,8 +15,9 @@ app.get("/about", function(req, res){
     res.render("about");
 });
 
-app.get("/template", function(req, res){
-    res.render("template");
+app.get("/t", function(req, res){
+    // res.render("template");
+    res.render("template", {title: "req.params.title"});
 });
 
 app.get("/portfolio", function(req, res){
