@@ -3,7 +3,7 @@ const bodyparser = require("body-parser");
 
 const app =  express();
 app.use(bodyparser.urlencoded({extended: true}));
-app.use(express.static("public"))
+app.use(express.static(__dirname + "/public"))
 
 app.set("view engine", "ejs")
 
@@ -15,9 +15,9 @@ app.get("/about", function(req, res){
     res.render("about");
 });
 
-app.get("/t", function(req, res){
+app.get("/t/:title", function(req, res){
     // res.render("template");
-    res.render("template", {title: "req.params.title"});
+    res.render("template", {title: req.params.title});
 });
 
 app.get("/portfolio", function(req, res){
