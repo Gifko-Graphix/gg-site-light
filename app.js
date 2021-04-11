@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + "/public"));
 
-app.use('/portfolio-images', express.static(__dirname + '/../images/Portfolio'));
+app.use('/portfolio', express.static(__dirname + '/../images/Portfolio'));
 
 app.set("view engine", "ejs")
 

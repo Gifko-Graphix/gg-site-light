@@ -10,7 +10,14 @@
 
   <% files.forEach(element => { %>
     <% const fileName = folder.trim() + "/" + element.trim() %> 
-      <img src="/portfolio-images<%=fileName%>" alt="an image"/> 
+    <% const arr = element.split(".") %> 
+    <% if (arr[arr.length-1] === "mp4") { %>
+      <video id="" width="720" height="480" controls>
+        <source src="/portfolio<%=fileName%>">
+      </video>
+    <% } else { %>
+      <img src="/portfolio<%=fileName%>" alt="an image"/> 
+      <% } %>
   <% }) %>
   <!-- <img src="/portfolio-images/Logos/Afrodiasiac.png" alt="an image"/> -->
   <!-- <img src="/images/Logos/logo_t.svg" alt="an image"/> -->
