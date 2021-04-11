@@ -1,3 +1,3 @@
 # GG Website Light Variant
 
-Hosted live at https://pmessan.github.io/gg-site-light/
+Hosted live at https://gifkographix.com/
