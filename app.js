@@ -56,7 +56,7 @@ app.get("/t/:title", function (req, res) {
         } else {
             const description = doc.description;
             const folder = doc.folder;
-            const files = fs.readdirSync(__dirname + "/../images/Portfolio" + folder);
+            const files = fs.readdirSync(__dirname + "/../externalFiles/Portfolio" + folder);
             res.render("template", { title: req_title, description: description, folder: folder, files: files });
         }
     })
