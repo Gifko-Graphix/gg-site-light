@@ -1,28 +1,16 @@
 {
-  "name": "gg-site-light",
-  "version": "1.0.0",
-  "description": "Gifko Graphix website",
-  "main": "app.js",
+  "private": true,
   "scripts": {
-    "start": "nodemon app.js"
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "cross-env NODE_ENV=production node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gifko-graphix/gg-site-light.git"
-  },
-  "author": "gifko graphix",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gifko-graphix/gg-site-light/issues"
-  },
-  "homepage": "https://github.com/gifko-graphix/gg-site-light#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^3.1.6",
+    "cross-env": "^7.0.2",
     "express": "^4.17.1",
-    "fs": "*",
-    "jquery": "^3.6.0",
-    "mongoose": "^5.12.3",
-    "nodemon": "^2.0.7"
-  }
+    "next": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "license": "MIT"
 }
