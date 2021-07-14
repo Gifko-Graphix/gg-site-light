@@ -1,16 +1,16 @@
 //jshint esversion:6
-const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const fs = require("fs");
+import express, { static } from "express";
+import { urlencoded } from "body-parser";
+import { connect, Schema, model } from "mongoose";
+import { readdirSync } from "fs";
 
 
-mongoose.connect(`mongodb+srv://admin:${process.env.PASSWD}@gg-cluster0.yuzpe.mongodb.net/websiteDB?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+connect(`mongodb+srv://admin:${process.env.PASSWD}@gg-cluster0.yuzpe.mongodb.net/websiteDB?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
 
 //create schemas
 
-const itemSchema = new mongoose.Schema({
+const itemSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -25,15 +25,15 @@ const itemSchema = new mongoose.Schema({
     }
 })
 
-const PortfolioItem = mongoose.model("item", itemSchema)
+const PortfolioItem = model("item", itemSchema)
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(urlencoded({ extended: true }));
 
 
-app.use(express.static(__dirname + "/public"));
+app.use(static(__dirname + "/public"));
 
-app.use('/portfolio', express.static(__dirname + '/../externalFiles/Portfolio'));
+app.use('/portfolio', static(__dirname + '/../externalFiles/Portfolio'));
 
 app.set("view engine", "ejs")
 
@@ -56,7 +56,7 @@ app.get("/t/:title", function (req, res) {
         } else {
             const description = doc.description;
             const folder = doc.folder;
-            const files = fs.readdirSync(__dirname + "/../externalFiles/Portfolio" + folder);
+            const files = readdirSync(__dirname + "/../externalFiles/Portfolio" + folder);
             res.render("template", { title: req_title, description: description, folder: folder, files: files });
         }
     })
