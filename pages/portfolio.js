@@ -5,7 +5,17 @@ import Item from '../models/Item';
 export default function Portfolio({ items }) {
   return (
     <Layout>
-      {items.map((item) => <h1>{item.title}</h1>)}
+      <div className="flex flex-col items-center justify-content-center">
+        <div className="mt-4">
+          <h1 className="text-7xl">Check out our portfolio!</h1>
+        </div>
+        <div className="mt-3">
+          <p>Here you cans see the projects we&apos;ve been working on!</p>
+        </div>
+      </div>
+      {/* {items.map((item) => (
+        <Item />
+      ))} */}
     </Layout>
   );
 }
