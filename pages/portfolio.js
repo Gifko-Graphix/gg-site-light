@@ -1,21 +1,22 @@
 import Layout from '../components/Layout';
 import dbConnect from '../utils/dbConnect';
 import Item from '../models/Item';
+import PortfolioSection from '../components/PortfolioSection';
+import PageHeader from '../components/PageHeader';
+import PortfolioItem from '../components/PortfolioItem';
 
 export default function Portfolio({ items }) {
+  // console.log(items);
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-content-center">
-        <div className="mt-4">
-          <h1 className="text-7xl">Check out our portfolio!</h1>
-        </div>
-        <div className="mt-3">
-          <p>Here you cans see the projects we&apos;ve been working on!</p>
-        </div>
+      <div className="mx-24">
+        <PageHeader title="Check out our portfolio!" caption="Here you can see what we've been working on!" />
+        <PortfolioSection title="Posters">
+          {items.map((item, index) => <PortfolioItem key={index} id={index} item={item} />)}
+        </PortfolioSection>
+        <PortfolioSection title="Editorial Design" />
+        <PortfolioSection title="Logos" />
       </div>
-      {/* {items.map((item) => (
-        <Item />
-      ))} */}
     </Layout>
   );
 }
