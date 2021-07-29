@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container';
 import Link from 'next/link';
 import Logo from '../public/images/General/logo_t.svg';
 
-
 export default function Header() {
   return (
     <Navbar expand="lg">

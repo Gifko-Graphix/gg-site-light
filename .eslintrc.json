@@ -27,6 +27,7 @@
         "no-underscore-dangle": "off",
         "no-console": "off",
         "jsx-a11y/no-redundant-roles": "off",
+        "react/jsx-props-no-spreading": "off",
         "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
       }

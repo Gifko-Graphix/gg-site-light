@@ -6,7 +6,6 @@ export default function Portfolio({ items }) {
   return (
     <Layout>
       {items.map((item) => <h1>{item.title}</h1>)}
-
     </Layout>
   );
 }
