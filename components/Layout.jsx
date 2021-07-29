@@ -1,19 +1,30 @@
-import Head from 'next/Head';
-import Script from 'next/Script';
+import Head from 'next/head';
+import Script from 'next/script';
+import Header from './Header';
 
 export default function Layout({ children }) {
-    return (
-        <>
-            <Head>
-                <meta charset="utf-8" />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-                />
-            </Head>
+  return (
+    <>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+      </Head>
 
-            {children}
-            <Script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" />
-        </>
-    );
+      <div className="absolute overflow-auto bg-gradient-to-b from-gray-50 to-gray-400 inset-0" id="background">
+        <Header />
+        {children}
+        <footer className="flex items-center justify-center align-bottom text-gray-300">
+          Copyright &copy;
+          {' '}
+          {new Date().getFullYear()}
+        </footer>
+      </div>
+
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
+
+    </>
+  );
 }
