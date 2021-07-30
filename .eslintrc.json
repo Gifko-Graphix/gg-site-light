@@ -26,6 +26,7 @@
         "react/prop-types": [0],
         "no-underscore-dangle": "off",
         "no-console": "off",
+        "react/no-array-index-key": "off",
         "jsx-a11y/no-redundant-roles": "off",
         "react/jsx-props-no-spreading": "off",
         "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",

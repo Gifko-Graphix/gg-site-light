@@ -3,12 +3,16 @@ import Image from 'next/image';
 // import dbConnect from '../utils/dbConnect';
 // import Item from '../models/Item';
 
-export default function PortfolioItem({ item: { folder, title } }) {
+export default function PortfolioItem({ item: { folder, title }, files }) {
   // const files = fs.readdirSync(folder); // need files from folder to render caroussel
   return (
     <div className="w-48 h-56 inline-block">
       <div className="relative h-48 w-48 rounded-lg object-cover object-center border-2 border-gray-900">
-        <Image src={folder} layout="fill" object-fit="fill" />
+        {files.map((file, index) => (
+          <div key={index} className="relative object-cover object-center inline-block h-screen">
+            <Image src={folder + file} alt={file} layout="fill" object-fit="fill" />
+          </div>
+        ))}
       </div>
       <div className="mt-2">
         <h1 className="text-xl text-gray-700">{title}</h1>
