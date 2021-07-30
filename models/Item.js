@@ -13,6 +13,10 @@ const itemSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: String,
+    required: true,
+  },
 });
 
 export default mongoose.models.Item || mongoose.model('Item', itemSchema);
