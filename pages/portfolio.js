@@ -3,20 +3,14 @@ import dbConnect from '../utils/dbConnect';
 import Item from '../models/Item';
 import PortfolioSection from '../components/PortfolioSection';
 import PageHeader from '../components/PageHeader';
-import PortfolioItem from '../components/PortfolioItem';
 
 export default function Portfolio({ items }) {
-  // console.log(items);
   return (
     <Layout>
-      <div className="mx-24">
-        <PageHeader title="Check out our portfolio!" caption="Here you can see what we've been working on!" />
-        <PortfolioSection title="Posters">
-          {items.map((item, index) => <PortfolioItem key={index} id={index} item={item} />)}
-        </PortfolioSection>
-        <PortfolioSection title="Editorial Design" />
-        <PortfolioSection title="Logos" />
-      </div>
+      <PageHeader title="Check out our portfolio!" caption="Here you can see what we've been working on!" />
+      <PortfolioSection title="Posters" items={items} />
+      <PortfolioSection title="Editorial" items={items} />
+      <PortfolioSection title="Logos" items={items} />
     </Layout>
   );
 }

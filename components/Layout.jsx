@@ -15,11 +15,15 @@ export default function Layout({ children }) {
 
       <div className="absolute overflow-auto bg-textured text-eggshell-default inset-0" id="background">
         <Header />
-        {children}
-        <footer className="flex items-center justify-center align-bottom text-gray-300">
+        <div className="mx-24 mt-24">
+          {children}
+        </div>
+        <footer className="flex items-center justify-center align-bottom text-gray-300 mt-6 py-6">
           Copyright &copy;
           {' '}
           {new Date().getFullYear()}
+          {' '}
+          Gifko Graphix. All rights reserved.
         </footer>
       </div>
 
