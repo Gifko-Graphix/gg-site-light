@@ -16,10 +16,10 @@ export default function Header() {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav className="me-auto">
-            <Nav.Link><Link href="/portfolio">Portfolio</Link></Nav.Link>
-            <Nav.Link><Link href="/about">About</Link></Nav.Link>
-            <Nav.Link><Link href="/contact">Contact Us</Link></Nav.Link>
+          <Nav className="me-auto text-eggshell-default space-x-9">
+            <Nav.Link as={Link} href="/portfolio" activeStyle={{ color: 'blue' }}>Portfolio</Nav.Link>
+            <Nav.Link as={Link} href="/about">About</Nav.Link>
+            <Nav.Link as={Link} href="/contact">Contact Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

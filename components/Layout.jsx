@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         />
       </Head>
 
-      <div className="absolute overflow-auto bg-gradient-to-b from-gray-50 to-gray-400 inset-0" id="background">
+      <div className="absolute overflow-auto bg-textured text-eggshell-default inset-0" id="background">
         <Header />
         {children}
         <footer className="flex items-center justify-center align-bottom text-gray-300">
