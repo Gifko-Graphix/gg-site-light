@@ -7,7 +7,7 @@ export default function PortfolioItem({ item: { folder, title }, files }) {
   // console.log(title);
   // console.log(files);
   const projects = files.filter((project) => project.title === title);
-  console.log(projects);
+  // console.log(projects);
   return (
     <div className="w-48 h-56 inline-block">
       <div className="relative h-48 w-48 rounded-lg object-cover object-center border-2 border-gray-900">

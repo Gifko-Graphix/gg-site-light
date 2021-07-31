@@ -6,7 +6,7 @@ import dbConnect from '../../utils/dbConnect';
 import Item from '../../models/Item';
 
 export default function Project({ item: { folder, title, description }, files }) {
-  console.log(files);
+  // console.log(files);
   return (
     <Layout>
       <div className="grid grid-cols-2 w-full">
