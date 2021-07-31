@@ -13,7 +13,7 @@ export default function PortfolioItem({ item: { folder, title }, files }) {
       <div className="relative h-48 w-48 rounded-lg object-cover object-center border-2 border-gray-900">
         {projects.map((project) => (
           project.filenames.map((file, index) => (
-            <div key={index} className="relative object-cover object-center inline-block">
+            <div key={index} className="absolute object-cover object-center h-full w-full">
               <Image src={folder + file} alt={file} layout="fill" object-fit="fill" />
               {console.log(folder + file)}
             </div>
