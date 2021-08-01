@@ -15,7 +15,7 @@ export default function PortfolioItem({ item: { folder, title }, files }) {
           project.filenames.map((file, index) => (
             <div key={index} className="absolute object-cover object-center h-full w-full">
               <Image src={folder + file} alt={file} layout="fill" object-fit="fill" />
-              {console.log(folder + file)}
+              {/* {console.log(folder + file)} */}
             </div>
           ))
 
