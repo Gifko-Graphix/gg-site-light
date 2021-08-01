@@ -7,7 +7,7 @@ import Logo from '../public/images/General/logo_t.svg';
 
 export default function Header() {
   return (
-    <Navbar className="mt-2" expand="lg" fixed="top">
+    <Navbar className="pt-2 bg-purple-dark" expand="lg" fixed="top">
       <Container>
         <Link href="/" passHref>
           <Navbar.Brand>

@@ -15,6 +15,9 @@ module.exports = {
       eggshell: {
         default: '#DADDD8',
       },
+      purple: {
+        dark: '#330C2F',
+      },
     },
   },
   variants: {

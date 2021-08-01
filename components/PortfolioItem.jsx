@@ -1,24 +1,25 @@
 import Image from 'next/image';
-// import fs from 'fs';
-// import dbConnect from '../utils/dbConnect';
-// import Item from '../models/Item';
+import Carousel from 'react-bootstrap/Carousel';
 
 export default function PortfolioItem({ item: { folder, title }, files }) {
-  // console.log(title);
-  // console.log(files);
   const projects = files.filter((project) => project.title === title);
-  // console.log(projects);
   return (
     <div className="w-48 h-56 inline-block">
-      <div className="relative h-48 w-48 rounded-lg object-cover object-center border-2 border-gray-900">
+      <div className="relative h-48 w-48 rounded-lg object-cover object-center border-2 border-eggshell-default">
         {projects.map((project) => (
-          project.filenames.map((file, index) => (
-            <div key={index} className="absolute object-cover object-center h-full w-full">
-              <Image src={folder + file} alt={file} layout="fill" object-fit="fill" />
-              {/* {console.log(folder + file)} */}
-            </div>
-          ))
-
+          <Carousel interval="2500" className="relative" style={{ height: '188.5', width: '188.5' }}>
+            {project.filenames.map((file, index) => (
+              <Carousel.Item className="object-cover object-center">
+                <Image
+                  src={folder + file}
+                  width="188.5"
+                  height="188.5"
+                  alt={file}
+                  key={index}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
         ))}
 
       </div>
@@ -28,7 +29,6 @@ export default function PortfolioItem({ item: { folder, title }, files }) {
     </div>
   );
 }
-
 //  need to figure a way to get access to the item trying to render this component,
 //  so that the fn below can fetch us the images for the carrousel in the component above
 
