@@ -15,16 +15,18 @@ export default function Layout({ children }) {
 
       <div className="absolute overflow-auto bg-purple-dark text-eggshell-default inset-0" id="background">
         <Header />
-        <div className="mx-24 mt-24">
+        <div className="mx-8 md:mx-12 lg:mx-16 xl:mx-24 mt-24">
           {children}
         </div>
-        <footer className="flex items-center justify-center align-bottom text-gray-300 mt-6 py-6">
+
+        <footer className="relative bottom-0 w-full flex flex-row items-center justify-center text-gray-300 py-6 px-8 text-center text-xs">
           Copyright &copy;
           {' '}
           {new Date().getFullYear()}
           {' '}
           Gifko Graphix. All rights reserved.
         </footer>
+
       </div>
 
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />

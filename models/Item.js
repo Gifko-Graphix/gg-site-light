@@ -13,6 +13,10 @@ const itemSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  customer: {
+    type: String,
+    required: true,
+  },
   category: {
     type: String,
     required: true,

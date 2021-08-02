@@ -5,25 +5,39 @@ import Layout from '../../components/Layout';
 import dbConnect from '../../utils/dbConnect';
 import Item from '../../models/Item';
 
-export default function Project({ item: { folder, title, description }, files }) {
+export default function Project({
+  item: {
+    folder, title, description, customer,
+  }, files,
+}) {
   // console.log(files);
   return (
     <Layout>
-      <div className="grid grid-cols-2 w-full">
-        <div id="images" className="grid gap-x-5 grid-cols-2">
-          {files.map((file, index) => (
-            <div key={index} className="relative object-cover object-center col-span-1 inline-block h-96">
-              <Image src={folder + file} alt={file} layout="fill" object-fit="fill" />
-              {/* {console.log(folder + file)} */}
-            </div>
-          ))}
-        </div>
-        <div className="pl-16">
-          <div id="projectTitle">
-            <h1 className="text-6xl">{title}</h1>
+      <div className="flex flex-col-reverse sm:grid sm:grid-cols-2 sm:gap-x-10 w-full">
+        <div>
+          <div id="projectTitle" className="mb-4 hidden sm:block">
+            <h1 className="text-7xl text-left">{title}</h1>
           </div>
-          <div id="projectDescription" className="text-lg w-2/3 mt-3">
-            <p>{description}</p>
+          <div id="images" className="grid md:gap-x-5 gap-y-4 sm:overflow-auto sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
+            {files.map((file, index) => (
+              <div key={index} className="relative object-cover object-center col-span-1 inline-block h-96">
+                <Image src={folder + file} alt={file} layout="fill" object-fit="cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <hr className="sm:hidden my-4" />
+        <div className="flex flex-col">
+          <div id="projectTitle" className="mb-4 sm:hidden">
+            <h1 className="text-7xl text-left">{title}</h1>
+          </div>
+          <div id="clientName" className="text-left w-full">
+            <p className="text-4xl text-bold inline ">Client Name: </p>
+            <p className="inline text-2xl w-full">{customer}</p>
+          </div>
+          <div id="projectDescription" className="text-left w-full sm:w-2/3 mt-3">
+            <p className="text-4xl text-bold">Description: </p>
+            <p className="text-lg w-full">{description}</p>
           </div>
         </div>
       </div>

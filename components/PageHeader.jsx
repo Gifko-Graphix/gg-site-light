@@ -1,9 +1,9 @@
 export default function PageHeader({ title, caption }) {
   return (
     <div className="flex flex-col items-center justify-content-center">
-      <h1 className="text-7xl">{title}</h1>
+      <h1 className="text-4xl sm:text-7xl text-center">{title}</h1>
       <div className="mt-3">
-        <p>{caption}</p>
+        <p className="text-center text-sm sm:text-base">{caption}</p>
       </div>
     </div>
   );
