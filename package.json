@@ -6,6 +6,7 @@
     "start": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "body-parser": "^1.19.0",
     "bootstrap": "^5.0.2",
     "cross-env": "^7.0.2",
