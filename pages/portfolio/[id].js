@@ -4,7 +4,6 @@ import Image from 'next/image';
 import fs from 'fs';
 import ReactPlayer from 'react-player';
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from 'react';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation';
 import Layout from '../../components/Layout';
@@ -52,10 +51,10 @@ export default function Project({
           {(category === 'editorial')
           && (
           <div className="grid md:gap-x-5 gap-y-4 sm:h-full sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4">
-            {files.map((file, index) => (
-              <div key={index} className="relative object-cover overflow-hidden object-center col-span-full inline-block h-full">
-                <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
-                  <div style={{ height: '580px' }}>
+            {files.map((file) => (
+              <div key={uuidv4()} className="relative object-cover overflow-hidden object-center col-span-full inline-block h-full">
+                <Worker key={uuidv4()} workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
+                  <div key={uuidv4()} style={{ height: '580px' }}>
                     <Viewer theme="dark" fileUrl={folder + file} plugins={[pageNavigationPluginInstance]} />
                   </div>
                 </Worker>

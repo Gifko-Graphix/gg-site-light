@@ -38,6 +38,8 @@ export default function Contact() {
               <div>
                 <p className="inline">+233552505740</p>
                 <span className="inline space-x-2 ml-2">
+                  <WhatsAppIcon />
+                  <TelegramIcon />
                   <PhoneIcon />
                 </span>
                 <br />
