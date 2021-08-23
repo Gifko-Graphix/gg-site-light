@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 export default function Home() {
   return (
     <Layout>
-      <main role="main" className="flex flex-col h-96 items-center justify-center">
+      <main role="main" className="flex flex-col h-96 items-center justify-center ">
         <Image
           src="/images/General/logo_t.svg"
           width="342.5"

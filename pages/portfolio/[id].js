@@ -1,16 +1,25 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable no-underscore-dangle */
 import Image from 'next/image';
 import fs from 'fs';
+import ReactPlayer from 'react-player';
+import { v4 as uuidv4 } from 'uuid';
+import { useState } from 'react';
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation';
 import Layout from '../../components/Layout';
 import dbConnect from '../../utils/dbConnect';
 import Item from '../../models/Item';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
 
 export default function Project({
   item: {
-    folder, title, description, customer,
+    folder, title, description, customer, category,
   }, files,
 }) {
   // console.log(files);
+  const pageNavigationPluginInstance = pageNavigationPlugin();
   return (
     <Layout>
       <div className="flex flex-col-reverse sm:grid sm:grid-cols-2 sm:gap-x-10 w-full">
@@ -18,13 +27,42 @@ export default function Project({
           <div id="projectTitle" className="mb-4 hidden sm:block">
             <h1 className="text-7xl text-left">{title}</h1>
           </div>
-          <div id="images" className="grid md:gap-x-5 gap-y-4 sm:overflow-auto sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
+          {((category !== 'videos') && (category !== 'editorial'))
+          && (
+          <div className="grid md:gap-x-5 gap-y-4 sm:overflow-auto sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
             {files.map((file, index) => (
               <div key={index} className="relative object-cover object-center col-span-1 inline-block h-96">
                 <Image src={folder + file} alt={file} layout="fill" object-fit="cover" />
               </div>
             ))}
           </div>
+          )}
+
+          {(category === 'videos')
+          && (
+          <div className="grid md:gap-x-5 gap-y-4 sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
+            {files.map((file, index) => (
+              <div key={index} className="relative object-cover object-center col-span-full inline-block h-96">
+                <ReactPlayer className="flex-grow h-full object-cover object-center" url={folder + file} pip stopOnUnmount={false} controls />
+              </div>
+            ))}
+          </div>
+          )}
+
+          {(category === 'editorial')
+          && (
+          <div className="grid md:gap-x-5 gap-y-4 sm:h-full sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4">
+            {files.map((file, index) => (
+              <div key={index} className="relative object-cover overflow-hidden object-center col-span-full inline-block h-full">
+                <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
+                  <div style={{ height: '580px' }}>
+                    <Viewer theme="dark" fileUrl={folder + file} plugins={[pageNavigationPluginInstance]} />
+                  </div>
+                </Worker>
+              </div>
+            ))}
+          </div>
+          )}
         </div>
         <hr className="sm:hidden my-4" />
         <div className="flex flex-col">

@@ -2,16 +2,20 @@ import fs from 'fs';
 import Layout from '../components/Layout';
 import dbConnect from '../utils/dbConnect';
 import Item from '../models/Item';
-import PortfolioSection from '../components/PortfolioSection';
+import ImagePortfolioSection from '../components/ImagePortfolioSection';
+import VideoPortfolioSection from '../components/VideoPortfolioSection';
+import DocumentPortfolioSection from '../components/DocumentPortfolioSection'
 import PageHeader from '../components/PageHeader';
 
 export default function Portfolio({ items, projectFiles: files }) {
   return (
     <Layout>
       <PageHeader title="Check out our portfolio!" caption="Here you can see what we've been working on!" />
-      <PortfolioSection category="Posters" items={items} files={files} />
-      <PortfolioSection category="Editorial" items={items} files={files} />
-      <PortfolioSection category="Logos" items={items} files={files} />
+      <ImagePortfolioSection category="Posters" items={items} files={files} />
+      <DocumentPortfolioSection category="Editorial" items={items} files={files} />
+      <ImagePortfolioSection category="Logos" items={items} files={files} />
+      <VideoPortfolioSection category="Videos" items={items} files={files} />
+      {/* <DocumentPortfolioSection category="Videos" items={items} files={files} /> */}
     </Layout>
   );
 }
