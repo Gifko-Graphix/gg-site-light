@@ -17,7 +17,6 @@ export default function Project({
     folder, title, description, customer, category,
   }, files,
 }) {
-  // console.log(files);
   const pageNavigationPluginInstance = pageNavigationPlugin();
   return (
     <Layout>
@@ -90,7 +89,6 @@ export async function getServerSideProps({ params }) {
   item._id = item._id.toString();
 
   const files = fs.readdirSync(`${process.cwd()}/./public${item.folder}`);
-  // console.log(files);
 
   return { props: { item, files } };
 }

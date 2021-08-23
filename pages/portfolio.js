@@ -4,7 +4,7 @@ import dbConnect from '../utils/dbConnect';
 import Item from '../models/Item';
 import ImagePortfolioSection from '../components/ImagePortfolioSection';
 import VideoPortfolioSection from '../components/VideoPortfolioSection';
-import DocumentPortfolioSection from '../components/DocumentPortfolioSection'
+import DocumentPortfolioSection from '../components/DocumentPortfolioSection';
 import PageHeader from '../components/PageHeader';
 
 export default function Portfolio({ items, projectFiles: files }) {
@@ -15,7 +15,6 @@ export default function Portfolio({ items, projectFiles: files }) {
       <DocumentPortfolioSection category="Editorial" items={items} files={files} />
       <ImagePortfolioSection category="Logos" items={items} files={files} />
       <VideoPortfolioSection category="Videos" items={items} files={files} />
-      {/* <DocumentPortfolioSection category="Videos" items={items} files={files} /> */}
     </Layout>
   );
 }
@@ -23,6 +22,7 @@ export default function Portfolio({ items, projectFiles: files }) {
 export async function getServerSideProps() {
   await dbConnect();
   const projectFiles = []; // array of objects with project title & file names
+
   /* find all the data in our database */
   const result = await Item.find({});
   const items = result.map((doc) => {
@@ -35,6 +35,5 @@ export async function getServerSideProps() {
     return item;
   });
 
-  // console.log(projectFiles);
   return { props: { items, projectFiles } };
 }

@@ -79,7 +79,6 @@ export default function Contact() {
             <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Social Media</h1>
             <hr className="my-2 w-1/2" />
             <div className="text-center text-xl space-y-2">
-              {/* <h2 className="text-2xl">General Inquires and Help</h2> */}
               <span className="inline mr-2">
                 <InstagramIcon />
               </span>
@@ -89,8 +88,6 @@ export default function Contact() {
                 <TwitterIcon />
               </span>
               <p className="inline">@gifkographix</p>
-              {/* <p>Dribble @gifkographix</p>
-              <p>Behance @gifkographix</p> */}
             </div>
           </div>
         </div>

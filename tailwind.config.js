@@ -3,7 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      backgroundImage: (theme) => ({
+      backgroundImage: () => ({
         textured: "url('/images/General/carbon-fibre.png'), linear-gradient(330deg, #00100B 0%, #00100B 100%)",
       }),
     },

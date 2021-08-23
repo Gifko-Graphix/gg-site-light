@@ -1,10 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-// import Image from 'next/image';
-// import Carousel from 'react-bootstrap/Carousel';
 import { v4 as uuidv4 } from 'uuid';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { useState } from 'react';
-// import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -52,18 +49,3 @@ export default function DocumentPortfolioItem({ item: { folder, title }, files }
     </div>
   );
 }
-//  need to figure a way to get access to the item trying to render this component,
-//  so that the fn below can fetch us the images for the carrousel in the component above
-
-// export async function getServerSideProps() {
-//   const { props: { item: { folder } } } = this;
-//   // await dbConnect();
-
-//   // const result = await Item.find({ folder });
-//   // const item = result[0].toObject();
-//   // item._id = item._id.toString();
-
-//   console.log(files);
-
-//   return { props: { files } };
-// }

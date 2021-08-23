@@ -30,18 +30,3 @@ export default function ImagePortfolioItem({ item: { folder, title }, files }) {
     </div>
   );
 }
-//  need to figure a way to get access to the item trying to render this component,
-//  so that the fn below can fetch us the images for the carrousel in the component above
-
-// export async function getServerSideProps() {
-//   const { props: { item: { folder } } } = this;
-//   // await dbConnect();
-
-//   // const result = await Item.find({ folder });
-//   // const item = result[0].toObject();
-//   // item._id = item._id.toString();
-
-//   console.log(files);
-
-//   return { props: { files } };
-// }
