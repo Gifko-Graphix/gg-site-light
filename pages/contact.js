@@ -1,6 +1,5 @@
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import TelegramIcon from '@material-ui/icons/Telegram';
-import PhoneIcon from '@material-ui/icons/Phone';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import EmailIcon from '@material-ui/icons/Email';
@@ -12,82 +11,106 @@ export default function Contact() {
   // make layout mobile responsive (grid becomes one col on smallest screens)
   return (
     <Layout>
-      <PageHeader title="We would love to hear from you!" />
-      <div className="h-96 mx-48 grid grid-cols-2 place-content-stretch mt-12">
-        <div className="grid grid-rows-2">
-          <div className="flex flex-col items-center justify-top rounded-md">
-            <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Address</h1>
-            <hr className="my-2 w-1/2" />
-            <div className="text-center text-xl">
-              <span className="inline mr-2">
-                <LocationOnIcon />
-              </span>
-              <p className="inline">
-                Second Labone Street A2
-                <br />
-                Accra, Ghana
-                <br />
-                GL-015-7443
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-top rounded-md">
-            <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Phone</h1>
-            <hr className="my-2 w-1/2" />
-            <div className="text-center text-xl space-y-2">
-              <div>
-                <p className="inline">+233552505740</p>
-                <span className="inline space-x-2 ml-2">
-                  <WhatsAppIcon />
-                  <TelegramIcon />
-                  <PhoneIcon />
-                </span>
-                <br />
-              </div>
-              <div>
-                <p className="inline">+491627087122</p>
-                <span className="inline space-x-2 ml-2">
-                  <WhatsAppIcon />
-                  <TelegramIcon />
-                  <PhoneIcon />
-                </span>
-                <br />
-              </div>
-              <div>
-                <p className="inline">+4915225169275</p>
-                <span className="inline space-x-2 ml-2">
-                  <WhatsAppIcon />
-                  <TelegramIcon />
-                  <PhoneIcon />
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="grid grid-rows-2">
+      <PageHeader title="We would love to hear from you!" caption="Feel free to reach out to us so we can discuss our design future together!" />
+      <div className="h-full mx-2 md:mx-48 grid md:grid-cols-2 md:place-content-stretch mt-6 md:mt-12 space-y-4 md:space-y-0">
+        <div className="grid md:grid-rows-2 space-y-8 md:space-y-4">
           <div className="flex flex-col items-center justify-top rounded-md">
             <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Email</h1>
-            <hr className="my-2 w-1/2" />
+            <hr className="my-2 w-full md:w-1/2" />
             <div className="text-center text-xl space-y-1">
-              <span className="inline mr-2">
-                <EmailIcon />
-              </span>
-              <p className="inline">contact@gifkographix.com</p>
+              <a href="mailto:contact@gifkographix.com">
+                <span className="inline mr-2">
+                  <EmailIcon />
+                </span>
+                <p className="inline">contact@gifkographix.com</p>
+              </a>
             </div>
           </div>
           <div className="flex flex-col items-center justify-top rounded-md">
             <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Social Media</h1>
-            <hr className="my-2 w-1/2" />
+            <hr className="my-2 w-full md:w-1/2" />
             <div className="text-center text-xl space-y-2">
-              <span className="inline mr-2">
-                <InstagramIcon />
-              </span>
-              <p className="inline">@gifkographix</p>
+              <a className="block" href="https://instagram.com/gifkographix">
+                <span className="inline mr-1">
+                  <InstagramIcon />
+                </span>
+                <p className="inline">@gifkographix</p>
+              </a>
+              <a className="block" href="https://twitter.com/gifkographix">
+                <span className="inline mr-1">
+                  <TwitterIcon />
+                </span>
+                <p className="inline">@gifkographix</p>
+              </a>
               <br />
-              <span className="inline mr-2">
-                <TwitterIcon />
-              </span>
-              <p className="inline">@gifkographix</p>
+            </div>
+          </div>
+        </div>
+        <div className="grid md:grid-rows-2 space-y-8 md:space-y-4">
+          <div className="flex flex-col items-center justify-top rounded-md">
+            <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Phone</h1>
+            <hr className="my-2 w-full md:w-1/2" />
+            <div className="text-center text-xl space-y-2">
+              <div>
+                <a href="tel:+233552505740">
+                  <p className="inline">+233 552505740</p>
+                </a>
+                <span className="inline space-x-2 ml-2">
+                  <a href="https://wa.me/message/EO5XDWQ5YP6RM1">
+                    <WhatsAppIcon />
+                  </a>
+                  <a href="https://t.me/gifkographix">
+                    <TelegramIcon />
+                  </a>
+
+                </span>
+                <br />
+              </div>
+              <div>
+                <a href="tel:+491627087122">
+                  <p className="inline">+49 1627087122</p>
+                </a>
+                <span className="inline space-x-2 ml-2">
+                  {/* <a href="#"> */}
+                  <WhatsAppIcon />
+                  {/* </a> */}
+                  <a href="https://t.me/pngkm">
+                    <TelegramIcon />
+                  </a>
+                </span>
+                <br />
+              </div>
+              <div>
+                <a href="tel:+4915225169275">
+                  <p className="inline">+49 15225169275</p>
+                </a>
+                <span className="inline space-x-2 ml-2">
+                  {/* <a href="#"> */}
+                  <WhatsAppIcon />
+                  {/* </a> */}
+                  <a href="https://t.me/danie_techie">
+                    <TelegramIcon />
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-top rounded-md">
+            <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Address</h1>
+            <hr className="my-2 w-full md:w-1/2" />
+            <div className="text-center text-xl">
+              <a href="https://www.google.com/maps/place/Second+Labone+St,+Accra,+Ghana/@5.5635023,-0.1717087,18z/data=!4m5!3m4!1s0xfdf9a9fc91d4e11:0xb660b6caff751604!8m2!3d5.5627548!4d-0.1700886">
+                <span className="inline mr-2">
+                  <LocationOnIcon />
+                </span>
+                <p className="inline">
+                  Second Labone Street A2
+                  <br />
+                  Accra, Ghana
+                  <br />
+                  GL-015-7443
+                </p>
+              </a>
             </div>
           </div>
         </div>

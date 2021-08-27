@@ -6,11 +6,12 @@
     "start": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@react-pdf-viewer/core": "^2.7.1",
     "@react-pdf-viewer/page-navigation": "^2.7.1",
     "body-parser": "^1.19.0",
-    "bootstrap": "^5.0.2",
+    "bootstrap": "^5.1.0",
     "cross-env": "^7.0.2",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
