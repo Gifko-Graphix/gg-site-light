@@ -69,7 +69,7 @@ export default function About() {
         />
         <ProfileColumn
           name="Cynthia Ngouongo"
-          position="Business Consultant (TBEd)"
+          position="Business Developer and Finance Manager"
           img="Cynthia.jpg"
           expertise="Business Development, Finance, Marketing, Voice-overs"
         />
