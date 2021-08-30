@@ -29,7 +29,7 @@ export default function Project({
           && (
           <div className="grid md:gap-x-5 gap-y-4 sm:overflow-auto sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
             {files.map((file, index) => (
-              <div key={index} className="relative object-cover object-center col-span-1 inline-block h-96">
+              <div key={index} className="relative object-cover object-center col-span-1 inline-block">
                 <Image src={folder + file} alt={file} layout="fill" object-fit="cover" />
               </div>
             ))}

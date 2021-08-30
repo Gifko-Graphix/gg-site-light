@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: () => ({
-        textured: "url('/images/General/carbon-fibre.png'), linear-gradient(330deg, #00100B 0%, #00100B 100%)",
+        textured: "url('/images/General/carbon-fibre.png'), linear-gradient( 112.1deg,  rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% )",
       }),
     },
     colors: {
