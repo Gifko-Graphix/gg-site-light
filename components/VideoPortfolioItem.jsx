@@ -11,7 +11,7 @@ export default function VideoPortfolioItem({ item: { folder, title }, files }) {
           <Carousel interval="2500" key={uuidv4()} className="relative h-full">
             {project.filenames.map((file) => (
               <Carousel.Item key={uuidv4()} className="flex flex-col object-cover object-center h-full ">
-                <video autoPlay loop muted className="flex-grow h-48 object-cover ">
+                <video autoPlay loop muted className="flex-grow h-48 object-cover shadow-xl">
                   <source src={folder + file} />
                 </video>
               </Carousel.Item>

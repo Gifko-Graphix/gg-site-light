@@ -21,7 +21,7 @@ export default function DocumentPortfolioItem({ item: { folder, title }, files }
         {projects.map((project) => (
           // change photos to video objects for the videos to display
           project.filenames.map((file) => (
-            <div key={uuidv4()}>
+            <div key={uuidv4()} className="shadow-xl">
               <Document
                 key={uuidv4()}
                 file={{ url: folder + file }}

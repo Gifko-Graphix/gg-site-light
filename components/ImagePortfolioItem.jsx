@@ -10,7 +10,7 @@ export default function ImagePortfolioItem({ item: { folder, title }, files }) {
         {projects.map((project) => (
           <Carousel interval="2500" key={uuidv4()} className="relative object-center">
             {project.filenames.map((file) => (
-              <Carousel.Item key={uuidv4()} className="overflow-hidden w-full">
+              <Carousel.Item key={uuidv4()} className="overflow-hidden w-full shadow-xl">
                 <Image
                   src={folder + file}
                   width="190"

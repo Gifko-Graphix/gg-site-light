@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         />
       </Head>
 
-      <div className="absolute overflow-auto bg-textured text-eggshell-default inset-0" id="background">
+      <div className="absolute overflow-auto bg-mazeblack text-eggshell-default inset-0" id="background">
         <Header />
         <div className="mx-8 md:mx-12 lg:mx-16 xl:mx-24 mt-24">
           {children}
