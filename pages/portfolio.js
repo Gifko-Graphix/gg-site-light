@@ -30,7 +30,7 @@ export async function getServerSideProps() {
     item._id = item._id.toString();
     projectFiles.push({
       title: item.title,
-      filenames: fs.readdirSync(`${process.cwd()}/public/static/${item.folder}`),
+      filenames: fs.readdirSync(`${process.cwd()}/public/static${item.folder}`),
     });
     return item;
   });
