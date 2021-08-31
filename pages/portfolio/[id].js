@@ -29,8 +29,8 @@ export default function Project({
           && (
           <div className="grid md:gap-x-5 gap-y-4 sm:overflow-auto sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
             {files.map((file, index) => (
-              <div key={index} className="relative object-cover object-center col-span-1 inline-block">
-                <Image src={folder + file} alt={file} layout="fill" object-fit="cover" />
+              <div key={index} className="relative object-cover object-center col-span-1 inline-block h-96">
+                <Image src={`/static${folder}${file}`} alt={file} layout="fill" object-fit="cover" />
               </div>
             ))}
           </div>
@@ -41,7 +41,7 @@ export default function Project({
           <div className="grid md:gap-x-5 gap-y-4 sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
             {files.map((file, index) => (
               <div key={index} className="relative object-cover object-center col-span-full inline-block h-96">
-                <ReactPlayer className="flex-grow h-full object-cover object-center" url={folder + file} pip stopOnUnmount={false} controls />
+                <ReactPlayer className="flex-grow h-full object-cover object-center" url={`/static${folder}${file}`} pip stopOnUnmount={false} controls />
               </div>
             ))}
           </div>
@@ -54,7 +54,7 @@ export default function Project({
               <div key={uuidv4()} className="relative object-cover overflow-hidden object-center col-span-full inline-block h-full">
                 <Worker key={uuidv4()} workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                   <div key={uuidv4()} style={{ height: '580px' }}>
-                    <Viewer theme="dark" fileUrl={folder + file} plugins={[pageNavigationPluginInstance]} />
+                    <Viewer theme="dark" fileUrl={`/static${folder}${file}`} plugins={[pageNavigationPluginInstance]} />
                   </div>
                 </Worker>
               </div>

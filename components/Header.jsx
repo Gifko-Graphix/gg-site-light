@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import Link from 'next/link';
-import Logo from '../public/images/General/logo_t.svg';
+import Logo from '../public/static/images/General/logo_t.svg';
 
 export default function Header() {
   return (

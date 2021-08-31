@@ -24,7 +24,7 @@ export default function DocumentPortfolioItem({ item: { folder, title }, files }
             <div key={uuidv4()} className="shadow-xl">
               <Document
                 key={uuidv4()}
-                file={{ url: folder + file }}
+                file={{ url: `/static${folder}${file}` }}
                 onLoadSuccess={onDocumentLoadSuccess}
               >
                 <Page key={uuidv4()} pageNumber={pageNumber} />

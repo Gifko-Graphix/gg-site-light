@@ -12,7 +12,7 @@ export default function VideoPortfolioItem({ item: { folder, title }, files }) {
             {project.filenames.map((file) => (
               <Carousel.Item key={uuidv4()} className="flex flex-col object-cover object-center h-full ">
                 <video autoPlay loop muted className="flex-grow h-48 object-cover shadow-xl">
-                  <source src={folder + file} />
+                  <source src={`/static${folder}${file}`} />
                 </video>
               </Carousel.Item>
             ))}
