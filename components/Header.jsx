@@ -7,8 +7,8 @@ import Logo from '../public/static/images/General/logo_t.svg';
 
 export default function Header() {
   return (
-    <Navbar className="pt-2 bg-mazeblack" expand="lg" fixed="top">
-      <Container>
+    <Navbar className="pt-2 bg-textured " expand="lg" fixed="top">
+      <Container className="shadow-none">
         <Link href="/" passHref>
           <Navbar.Brand>
             <Image src={Logo} alt="Gifko Graphix Logo" height="40" width="80" />

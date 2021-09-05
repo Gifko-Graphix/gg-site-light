@@ -6,7 +6,7 @@ export default function ProfileColumn({
   return (
     <div className="col-span-1 flex flex-col items-center mt-4 w-64">
       <div id="image" className="relative object-cover object-center rounded-full h-36 lg:h-48 w-36 lg:w-48 overflow-hidden">
-        <Image src={`/images/profiles/${img}`} layout="fill" alt={img} object-fit="cover" />
+        <Image src={`/static/images/profiles/${img}`} layout="fill" alt={img} object-fit="cover" />
       </div>
       <div id="info" className="flex flex-col space-y-0.5 md:space-y-2 mt-2">
         <h1 className="text-xl md:text-2xl font-semibold">{name}</h1>

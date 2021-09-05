@@ -4,8 +4,7 @@ import Image from 'next/image';
 import fs from 'fs';
 import ReactPlayer from 'react-player';
 import { v4 as uuidv4 } from 'uuid';
-import { Worker, Viewer } from '@react-pdf-viewer/core';
-import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation';
+import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
 import Layout from '../../components/Layout';
 import dbConnect from '../../utils/dbConnect';
 import Item from '../../models/Item';
@@ -14,10 +13,9 @@ import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
 
 export default function Project({
   item: {
-    folder, title, description, customer, category,
+    folder, title, description, customer, category, profileLink,
   }, files,
 }) {
-  const pageNavigationPluginInstance = pageNavigationPlugin();
   return (
     <Layout>
       <div className="flex flex-col-reverse sm:grid sm:grid-cols-2 sm:gap-x-10 w-full">
@@ -49,12 +47,14 @@ export default function Project({
 
           {(category === 'editorial')
           && (
-          <div className="grid md:gap-x-5 gap-y-4 sm:h-full sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4">
+          <div className="grid md:gap-x-5 gap-y-4 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 overflow-auto">
             {files.map((file) => (
-              <div key={uuidv4()} className="relative object-cover overflow-hidden object-center col-span-full inline-block h-full">
+              <div key={uuidv4()} className="relative object-cover overflow-hidden object-center col-span-full inline-block">
                 <Worker key={uuidv4()} workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                   <div key={uuidv4()} style={{ height: '580px' }}>
-                    <Viewer theme="dark" fileUrl={`/static${folder}${file}`} plugins={[pageNavigationPluginInstance]} />
+
+                    <Viewer theme="dark" fileUrl={`/static${folder}${file}`} defaultScale={SpecialZoomLevel.PageFit} />
+
                   </div>
                 </Worker>
               </div>
@@ -69,7 +69,9 @@ export default function Project({
           </div>
           <div id="clientName" className="text-left w-full">
             <p className="text-4xl text-bold inline ">Client Name: </p>
-            <p className="inline text-2xl w-full">{customer}</p>
+            <a href={profileLink}>
+              <p className="inline text-2xl w-full">{customer}</p>
+            </a>
           </div>
           <div id="projectDescription" className="text-left w-full sm:w-2/3 mt-3">
             <p className="text-4xl text-bold">Description: </p>
@@ -88,7 +90,7 @@ export async function getServerSideProps({ params }) {
   const item = result[0].toObject();
   item._id = item._id.toString();
 
-  const files = fs.readdirSync(`${process.cwd()}/./public${item.folder}`);
+  const files = fs.readdirSync(`${process.cwd()}/public/static${item.folder}`);
 
   return { props: { item, files } };
 }

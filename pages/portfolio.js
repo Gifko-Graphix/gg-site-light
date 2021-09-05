@@ -1,4 +1,5 @@
 import fs from 'fs';
+import React from 'react';
 import Layout from '../components/Layout';
 import dbConnect from '../utils/dbConnect';
 import Item from '../models/Item';
@@ -8,6 +9,12 @@ import DocumentPortfolioSection from '../components/DocumentPortfolioSection';
 import PageHeader from '../components/PageHeader';
 
 export default function Portfolio({ items, projectFiles: files }) {
+  React.useEffect(() => {
+    // window is accessible here.
+    document.onload = function Loader() {
+      alert('Page loaded!');
+    };
+  }, []);
   return (
     <Layout>
       <PageHeader title="Check out our portfolio!" caption="Here you can see what we've been working on!" />

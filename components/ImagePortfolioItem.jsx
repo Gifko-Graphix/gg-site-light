@@ -18,6 +18,7 @@ export default function ImagePortfolioItem({ item: { folder, title }, files }) {
                   alt={file}
                   key={uuidv4()}
                   objectFit="cover"
+                  priority="true"
                 />
               </Carousel.Item>
             ))}
