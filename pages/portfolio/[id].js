@@ -5,6 +5,7 @@ import fs from 'fs';
 import ReactPlayer from 'react-player';
 import { v4 as uuidv4 } from 'uuid';
 import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
+import path from 'path';
 import Layout from '../../components/Layout';
 import dbConnect from '../../utils/dbConnect';
 import Item from '../../models/Item';
@@ -18,7 +19,7 @@ export default function Project({
 }) {
   return (
     <Layout>
-      <div className="flex flex-col-reverse sm:grid sm:grid-cols-2 sm:gap-x-10 w-full">
+      <div className="flex flex-col-reverse sm:grid sm:grid-cols-2 sm:gap-x-10 w-full h-full">
         <div>
           <div id="projectTitle" className="mb-4 hidden sm:block">
             <h1 className="text-7xl text-left">{title}</h1>
@@ -26,8 +27,8 @@ export default function Project({
           {((category !== 'videos') && (category !== 'editorial'))
           && (
           <div className="grid md:gap-x-5 gap-y-4 sm:overflow-auto sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
-            {files.map((file, index) => (
-              <div key={index} className="relative object-cover object-center col-span-1 inline-block h-96">
+            {files.map((file) => (
+              <div key={uuidv4()} className="relative object-cover object-center col-span-1 inline-block h-96">
                 <Image src={`/static${folder}${file}`} alt={file} layout="fill" object-fit="cover" />
               </div>
             ))}
@@ -36,10 +37,10 @@ export default function Project({
 
           {(category === 'videos')
           && (
-          <div className="grid md:gap-x-5 gap-y-4 sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
-            {files.map((file, index) => (
-              <div key={index} className="relative object-cover object-center col-span-full inline-block h-96">
-                <ReactPlayer className="flex-grow h-full object-cover object-center" url={`/static${folder}${file}`} pip stopOnUnmount={false} controls />
+          <div className="grid md:gap-x-5 gap-y-4 sm:grid-cols-1 mt-0 sm:mt-4 ">
+            {files.filter((filename) => path.extname(filename) === '.mp4').map((file) => (
+              <div key={uuidv4()} className="relative col-span-full">
+                <ReactPlayer width="" height="" url={`/static${folder}${file}`} pip stopOnUnmount={false} controls />
               </div>
             ))}
           </div>

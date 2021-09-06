@@ -48,7 +48,7 @@ export default function About() {
       </div>
 
       <SectionHeader text="Our Team" />
-      <div className="container grid lg:grid-cols-4 w-11/12 mt-2 mb-16">
+      <div className="container grid lg:grid-cols-4 w-11/12 mt-2 mb-16 justify-center">
         <ProfileColumn
           name="Peter-Newman Messan"
           position="Founder & Co-Lead Designer"
