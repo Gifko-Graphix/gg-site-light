@@ -20,7 +20,7 @@ export default function Portfolio({ items, projectFiles: files }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   await dbConnect();
   const projectFiles = []; // array of objects with project title & file names
 
