@@ -26,10 +26,10 @@ export default function Project({
           </div>
           {((category !== 'videos') && (category !== 'editorial'))
           && (
-          <div className="grid md:gap-x-5 gap-y-4 sm:overflow-auto sm:h-96 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 ">
+          <div className="grid md:gap-x-5 gap-y-2 sm:overflow-auto sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 " style={{ height: '550px' }}>
             {files.map((file) => (
-              <div key={uuidv4()} className="relative object-cover object-center col-span-1 inline-block h-96">
-                <Image src={`/static${folder}${file}`} alt={file} layout="fill" object-fit="cover" />
+              <div key={uuidv4()} className="relative object-center col-span-1 w-full" style={{ height: '370px' }}>
+                <Image src={`/static${folder}${file}`} alt={file} layout="fill" objectFit="contain" />
               </div>
             ))}
           </div>
@@ -37,7 +37,7 @@ export default function Project({
 
           {(category === 'videos')
           && (
-          <div className="grid md:gap-x-5 gap-y-4 sm:grid-cols-1 mt-0 sm:mt-4 ">
+          <div className="grid md:gap-x-5 gap-y-4 sm:grid-cols-1 mt-0 sm:mt-4 sm:overflow-auto" style={{ height: '550px' }}>
             {files.filter((filename) => path.extname(filename) === '.mp4').map((file) => (
               <div key={uuidv4()} className="relative col-span-full">
                 <ReactPlayer width="" height="" url={`/static${folder}${file}`} pip stopOnUnmount={false} controls />
