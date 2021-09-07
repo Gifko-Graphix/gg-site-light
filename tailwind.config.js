@@ -19,6 +19,10 @@ module.exports = {
         dark: '#330C2F',
       },
     },
+    fontFamily: {
+      sans: 'Expletus\\ Sans, cursive',
+      serif: 'Cormorant\\ Garamond, serif',
+    },
   },
   variants: {
     extend: {},

@@ -15,7 +15,7 @@ export default function Contact() {
       <div className="h-full mx-2 md:mx-48 grid md:grid-cols-2 md:place-content-stretch mt-6 md:mt-12 space-y-4 md:space-y-0">
         <div className="grid md:grid-rows-2 space-y-8 md:space-y-4">
           <div className="flex flex-col items-center justify-top rounded-md">
-            <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Email</h1>
+            <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Email</h1>
             <hr className="my-2 w-full md:w-1/2" />
             <div className="text-center text-xl space-y-1">
               <a href="mailto:contact@gifkographix.com">
@@ -27,7 +27,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-top rounded-md">
-            <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Social Media</h1>
+            <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Social Media</h1>
             <hr className="my-2 w-full md:w-1/2" />
             <div className="text-center text-xl space-y-2">
               <a className="block" href="https://instagram.com/gifkographix">
@@ -48,7 +48,7 @@ export default function Contact() {
         </div>
         <div className="grid md:grid-rows-2 space-y-8 md:space-y-4">
           <div className="flex flex-col items-center justify-top rounded-md">
-            <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Phone</h1>
+            <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Phone</h1>
             <hr className="my-2 w-full md:w-1/2" />
             <div className="text-center text-xl space-y-2">
               <div>
@@ -96,7 +96,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-top rounded-md">
-            <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Address</h1>
+            <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Address</h1>
             <hr className="my-2 w-full md:w-1/2" />
             <div className="text-center text-xl">
               <a href="https://www.google.com/maps/place/Second+Labone+St,+Accra,+Ghana/@5.5635023,-0.1717087,18z/data=!4m5!3m4!1s0xfdf9a9fc91d4e11:0xb660b6caff751604!8m2!3d5.5627548!4d-0.1700886">

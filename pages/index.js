@@ -13,11 +13,11 @@ export default function Home() {
           alt="logo"
           className="img-class img-fluid"
         /> */}
-        <h1 className="text-5xl lg:text-8xl text-center font-light mb-14">Welcome to Gifko Graphix!</h1>
-        <h1 className="mt-4 text-center text-2xl">Check out our portfolio or contact us today!</h1>
+        <h1 className="text-5xl lg:text-8xl text-center font-light mb-14 font-serif">Welcome to Gifko Graphix!</h1>
+        <h1 className="mt-4 text-center text-2xl font-sans">Check out our portfolio or contact us today!</h1>
         <div className="space-x-4 mt-4">
           <Link href="/portfolio" passHref>
-            <Button className="inline" variant="contained">
+            <Button className="inline font-sans" variant="contained">
               To the Portfolio
             </Button>
           </Link>
