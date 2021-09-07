@@ -17,6 +17,7 @@ module.exports = {
       },
       purple: {
         dark: '#330C2F',
+        light: '#CC33FF',
       },
     },
     fontFamily: {

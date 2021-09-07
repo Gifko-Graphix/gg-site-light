@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Button } from '@material-ui/core';
 import styled, { keyframes } from 'styled-components';
 import { fadeInDown, fadeIn, fadeInUp } from 'react-animations';
 import Layout from '../components/Layout';
@@ -37,14 +36,14 @@ export default function Home() {
         <FadeInUpDiv>
           <div className="space-x-4 mt-4">
             <Link href="/portfolio" passHref>
-              <Button className="inline font-sans" variant="contained">
-                To the Portfolio
-              </Button>
+              <button className="btn bg-eggshell-default inline font-sans hover:text-green-light hover:bg-purple-light" type="button">
+                To The Portfolio
+              </button>
             </Link>
             <Link href="/contact" passHref>
-              <Button className="inline font-sans" variant="contained">
+              <button className="btn bg-eggshell-default inline font-sans hover:text-green-light hover:bg-purple-light" type="button">
                 Contact Us
-              </Button>
+              </button>
             </Link>
           </div>
         </FadeInUpDiv>

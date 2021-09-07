@@ -17,7 +17,7 @@ export default function DocumentPortfolioItem({ item: { folder, title }, files }
 
   return (
     <div className="w-48 h-56 inline-block">
-      <div className="flex flex-col relative h-48 w-48 object-cover object-center z-10 rounded-sm border-2 border-eggshell-default overflow-hidden">
+      <div className="flex flex-col relative h-48 w-48 object-cover object-center z-10 rounded-sm border-2 border-eggshell-default overflow-hidden hover:border-green-light">
         {projects.map((project) => (
           // change photos to video objects for the videos to display
           project.filenames.map((file) => (

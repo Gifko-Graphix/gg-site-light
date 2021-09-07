@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Button } from '@material-ui/core';
 import styled, { keyframes } from 'styled-components';
 import { fadeIn, fadeInUp } from 'react-animations';
 import Layout from '../components/Layout';
@@ -66,7 +65,7 @@ export default function About() {
                 services={['Advertisements', 'Compilations', 'Explainer Videos', 'Logo Intro/Outro']}
               />
             </FadeInDiv>
-            <FadeInDiv parentPosition="2" position="3">
+            <FadeInDiv parentPosition="2" position="4">
               <ServiceListSection
                 title="Mobile / Web"
                 services={['UI Design', 'UX Design', 'Wireframing', 'Website / Web App Development', 'Mobile App Development (coming soon)']}
@@ -118,9 +117,9 @@ export default function About() {
         <div className="w-10/12 md:w-1/2 container my-5 flex flex-col items-center">
           <h1 className="text-lg font-light text-center mb-4">Now that you&apos;ve met our team, get in touch with us today to find out how we can support you in your next project!</h1>
           <Link href="/contact" passHref>
-            <Button className="inline" variant="contained">
+            <button className="btn bg-eggshell-default inline font-sans hover:text-green-light hover:bg-purple-light" type="button">
               Contact Us
-            </Button>
+            </button>
           </Link>
         </div>
       </FadeInUpDiv>

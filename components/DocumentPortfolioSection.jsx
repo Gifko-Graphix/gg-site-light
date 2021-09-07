@@ -26,14 +26,14 @@ export default function DocumentPortfolioSection({
 }) {
   return (
     <FadeInUpDiv delay={position}>
-      <div className="mt-5 flex flex-col items-center ">
+      <div className="mt-5 flex flex-col items-center">
         <SectionHeader text={category} />
         <div className="flex flex-col gap-y-8 sm:gap-y-5 sm:grid md:grid-cols-3 md:gap-x-12 lg:grid-cols-4 lg:gap-x-11 xl:grid-cols-6 xl:gap-x-16 xl:gap-y-8 pt-4">
           {(items.filter((item) => item.category === lowerCase(category))).map((item, index) => (
-            <FadeInDiv delay={index} parentDelay={position}>
-              <Link key={uuidv4()} id={index} href={`/portfolio/${item.title}`} passHref>
-                <ItemButton key={uuidv4()}>
-                  <DocumentPortfolioItem key={uuidv4()} item={item} files={files} />
+            <FadeInDiv key={uuidv4()} delay={index} parentDelay={position}>
+              <Link id={index} href={`/portfolio/${item.title}`} passHref>
+                <ItemButton>
+                  <DocumentPortfolioItem item={item} files={files} />
                 </ItemButton>
               </Link>
             </FadeInDiv>

@@ -34,7 +34,7 @@ export default function Layout({ children }) {
           {children}
         </div>
 
-        <footer className="relative bottom-0 w-full flex flex-row items-center justify-center text-gray-300 py-6 px-8 text-center text-xs">
+        <footer className="relative bottom-0 w-full flex flex-row items-center justify-center text-gray-300 py-10 px-8 text-center text-xs">
           <FadeInDiv>
             Copyright &copy;
             {' '}

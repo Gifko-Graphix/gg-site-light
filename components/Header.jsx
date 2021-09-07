@@ -21,9 +21,9 @@ export default function Header() {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="me-auto text-eggshell-default gap-x-9 gap-y-5">
-            <Nav.Link as={Link} href="/portfolio" activeStyle={{ color: 'blue' }}>Portfolio</Nav.Link>
-            <Nav.Link as={Link} href="/about" activeStyle={{ color: 'blue' }}>About</Nav.Link>
-            <Nav.Link as={Link} href="/contact" activeStyle={{ color: 'blue' }}>Contact Us</Nav.Link>
+            <Nav.Link as={Link} href="/portfolio"><span className="hover:text-purple-light">Portfolio</span></Nav.Link>
+            <Nav.Link as={Link} href="/about"><span className="hover:text-purple-light">About</span></Nav.Link>
+            <Nav.Link as={Link} href="/contact"><span className="hover:text-purple-light">Contact Us</span></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
