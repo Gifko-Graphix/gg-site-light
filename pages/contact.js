@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="grid md:grid-rows-2 space-y-8 md:space-y-4">
           <FadeInDiv position="1">
             <div className="flex flex-col items-center justify-top rounded-md" id="email">
-              <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Email</h1>
+              <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Email</h1>
               <hr className="my-2 w-full md:w-1/2" />
               <div className="text-center text-xl space-y-1">
                 <a href="mailto:contact@gifkographix.com">
@@ -39,20 +39,20 @@ export default function Contact() {
           </FadeInDiv>
           <FadeInDiv position="2">
             <div className="flex flex-col items-center justify-top rounded-md" id="social-media">
-              <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Social Media</h1>
+              <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Social Media</h1>
               <hr className="my-2 w-full md:w-1/2" />
               <div className="text-center text-xl space-y-2">
                 <a className="block" href="https://instagram.com/gifkographix">
                   <span className="inline mr-1">
                     <InstagramIcon />
                   </span>
-                  <p className="inline">@gifkographix</p>
+                  <p className="inline font-sans">@gifkographix</p>
                 </a>
                 <a className="block" href="https://twitter.com/gifkographix">
                   <span className="inline mr-1">
                     <TwitterIcon />
                   </span>
-                  <p className="inline">@gifkographix</p>
+                  <p className="inline font-sans">@gifkographix</p>
                 </a>
                 <br />
               </div>
@@ -63,12 +63,12 @@ export default function Contact() {
         <div className="grid md:grid-rows-2 space-y-8 md:space-y-4">
           <FadeInDiv position="3">
             <div className="flex flex-col items-center justify-top rounded-md" id="phone">
-              <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Phone</h1>
+              <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Phone</h1>
               <hr className="my-2 w-full md:w-1/2" />
               <div className="text-center text-xl space-y-2">
                 <div>
                   <a href="tel:+233552505740">
-                    <p className="inline">+233 552505740</p>
+                    <p className="inline font-sans">+233 552505740</p>
                   </a>
                   <span className="inline space-x-2 ml-2">
                     <a href="https://wa.me/message/EO5XDWQ5YP6RM1">
@@ -77,18 +77,15 @@ export default function Contact() {
                     <a href="https://t.me/gifkographix">
                       <TelegramIcon />
                     </a>
-
                   </span>
                   <br />
                 </div>
                 <div>
                   <a href="tel:+491627087122">
-                    <p className="inline">+49 1627087122</p>
+                    <p className="inline font-sans">+49 1627087122</p>
                   </a>
                   <span className="inline space-x-2 ml-2">
-                    {/* <a href="#"> */}
                     <WhatsAppIcon />
-                    {/* </a> */}
                     <a href="https://t.me/pngkm">
                       <TelegramIcon />
                     </a>
@@ -97,12 +94,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <a href="tel:+4915225169275">
-                    <p className="inline">+49 15225169275</p>
+                    <p className="inline font-sans">+49 15225169275</p>
                   </a>
                   <span className="inline space-x-2 ml-2">
-                    {/* <a href="#"> */}
                     <WhatsAppIcon />
-                    {/* </a> */}
                     <a href="https://t.me/danie_techie">
                       <TelegramIcon />
                     </a>
@@ -113,14 +108,14 @@ export default function Contact() {
           </FadeInDiv>
           <FadeInDiv position="4">
             <div className="flex flex-col items-center justify-top rounded-md" id="address">
-              <h1 className="text-3xl text-center sm:text-left sm:text-4xl">Address</h1>
+              <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Address</h1>
               <hr className="my-2 w-full md:w-1/2" />
               <div className="text-center text-xl">
                 <a href="https://www.google.com/maps/place/Second+Labone+St,+Accra,+Ghana/@5.5635023,-0.1717087,18z/data=!4m5!3m4!1s0xfdf9a9fc91d4e11:0xb660b6caff751604!8m2!3d5.5627548!4d-0.1700886">
                   <span className="inline mr-2">
                     <LocationOnIcon />
                   </span>
-                  <p className="inline">
+                  <p className="inline font-sans">
                     Second Labone Street A2
                     <br />
                     Accra, Ghana

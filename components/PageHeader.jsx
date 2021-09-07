@@ -17,10 +17,10 @@ export default function PageHeader({ title, caption }) {
   return (
     <div className="flex flex-col items-center justify-content-center ">
       <FadeInDownDiv>
-        <h1 className="text-4xl sm:text-7xl text-center">{title}</h1>
+        <h1 className="text-4xl sm:text-7xl text-center font-serif">{title}</h1>
       </FadeInDownDiv>
       <FadeInDiv>
-        <p className="mt-3 block text-center text-sm sm:text-xl">{caption}</p>
+        <p className="mt-3 block text-center text-sm sm:text-xl font-sans">{caption}</p>
       </FadeInDiv>
     </div>
   );
