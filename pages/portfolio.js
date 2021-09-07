@@ -12,10 +12,10 @@ export default function Portfolio({ items, projectFiles: files }) {
   return (
     <Layout>
       <PageHeader title="Check out our portfolio!" caption="Here you can see what we've been working on!" />
-      <ImagePortfolioSection category="Posters" items={items} files={files} />
-      <DocumentPortfolioSection category="Editorial" items={items} files={files} />
-      <ImagePortfolioSection category="Logos" items={items} files={files} />
-      <VideoPortfolioSection category="Videos" items={items} files={files} />
+      <ImagePortfolioSection category="Posters" items={items} files={files} position="1" />
+      <DocumentPortfolioSection category="Editorial" items={items} files={files} position="2" />
+      <ImagePortfolioSection category="Logos" items={items} files={files} position="3" />
+      <VideoPortfolioSection category="Videos" items={items} files={files} position="4" />
     </Layout>
   );
 }

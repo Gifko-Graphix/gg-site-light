@@ -1,6 +1,15 @@
 import Head from 'next/head';
 import Script from 'next/script';
+import styled, { keyframes } from 'styled-components';
+import { fadeIn } from 'react-animations';
 import Header from './Header';
+
+const fadeInAnimation = keyframes`${fadeIn}`;
+const FadeInDiv = styled.div`
+      animation: 1s ${fadeInAnimation} 3s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+  `;
 
 export default function Layout({ children }) {
   return (
@@ -20,11 +29,13 @@ export default function Layout({ children }) {
         </div>
 
         <footer className="relative bottom-0 w-full flex flex-row items-center justify-center text-gray-300 py-6 px-8 text-center text-xs">
-          Copyright &copy;
-          {' '}
-          {new Date().getFullYear()}
-          {' '}
-          Gifko Graphix. All rights reserved.
+          <FadeInDiv>
+            Copyright &copy;
+            {' '}
+            {new Date().getFullYear()}
+            {' '}
+            Gifko Graphix. All rights reserved.
+          </FadeInDiv>
         </footer>
 
       </div>
