@@ -96,13 +96,11 @@ export default function Project({
 
         <hr className="sm:hidden my-4" />
         <div className="flex flex-col">
-
           <div id="projectTitle" className="mb-4 sm:hidden">
             <FadeInDownDiv>
               <h1 className="text-7xl text-left font-serif">{title}</h1>
             </FadeInDownDiv>
           </div>
-
           <div id="clientName" className="text-left w-full">
             <FadeInDiv>
               <p className="text-4xl font-bold inline font-serif">Client Name: </p>
