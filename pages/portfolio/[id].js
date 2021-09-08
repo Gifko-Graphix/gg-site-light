@@ -52,7 +52,7 @@ export default function Project({
           && (
             <FadeInUpDiv>
               <div className="grid md:gap-x-5 gap-y-2 sm:overflow-auto sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 " style={{ height: '550px' }}>
-                {files.map((file) => (
+                {files.filter((filename) => path.extname(filename) === '.webp').map((file) => (
                   <div key={uuidv4()} className="relative object-center col-span-1 w-full" style={{ height: '370px' }}>
                     <Image src={`/static${folder}${file}`} alt={file} layout="fill" objectFit="contain" />
                   </div>
@@ -78,7 +78,7 @@ export default function Project({
           && (
             <FadeInUpDiv>
               <div className="grid md:gap-x-5 gap-y-4 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 overflow-auto">
-                {files.map((file) => (
+                {files.filter((filename) => path.extname(filename) === '.pdf').map((file) => (
                   <div key={uuidv4()} className="relative object-cover overflow-hidden object-center col-span-full inline-block">
                     <Worker key={uuidv4()} workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                       <div key={uuidv4()} style={{ height: '580px' }}>
