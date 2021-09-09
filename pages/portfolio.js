@@ -15,7 +15,7 @@ export default function Portfolio({ items, projectFiles: files }) {
       <ImagePortfolioSection category="Posters" items={items} files={files} position="1" />
       <DocumentPortfolioSection category="Editorial" items={items} files={files} position="2" />
       <ImagePortfolioSection category="Logos" items={items} files={files} position="3" />
-      <VideoPortfolioSection category="Videos" items={items} files={files} position="4" />
+      <VideoPortfolioSection category="Videos & Animations" items={items} files={files} position="4" />
     </Layout>
   );
 }

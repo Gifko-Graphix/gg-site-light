@@ -34,14 +34,14 @@ export default function Home() {
         </FadeInDiv>
 
         <FadeInUpDiv>
-          <div className="space-x-4 mt-4">
+          <div className="lg:space-x-4 space-y-4 lg:space-y-0 flex flex-col lg:flex-row items-center mt-4 mb-12">
             <Link href="/portfolio" passHref>
-              <button className="btn bg-eggshell-default inline font-sans hover:text-green-light hover:bg-purple-light" type="button">
+              <button className="btn bg-eggshell-default inline font-sans hover:text-purple-light hover:bg-green-light" type="button">
                 To The Portfolio
               </button>
             </Link>
             <Link href="/contact" passHref>
-              <button className="btn bg-eggshell-default inline font-sans hover:text-green-light hover:bg-purple-light" type="button">
+              <button className="btn bg-eggshell-default inline font-sans hover:text-purple-light hover:bg-green-light" type="button">
                 Contact Us
               </button>
             </Link>

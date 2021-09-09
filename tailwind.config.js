@@ -19,6 +19,13 @@ module.exports = {
         dark: '#330C2F',
         light: '#CC33FF',
       },
+      blue: {
+        telegram: '#0088CC',
+        twitter: '#00ACEE',
+      },
+      ig: {
+        default: '#BC2A8D',
+      },
     },
     fontFamily: {
       sans: 'Expletus\\ Sans, cursive',

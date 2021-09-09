@@ -28,7 +28,7 @@ export default function Contact() {
               <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Email</h1>
               <hr className="my-2 w-full md:w-1/2" />
               <div className="text-center text-xl space-y-1">
-                <a className="hover:text-green-light" href="mailto:contact@gifkographix.com">
+                <a className="hover:text-purple-light" href="mailto:contact@gifkographix.com">
                   <span className="inline mr-2">
                     <EmailIcon />
                   </span>
@@ -42,13 +42,13 @@ export default function Contact() {
               <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Social Media</h1>
               <hr className="my-2 w-full md:w-1/2" />
               <div className="text-center text-xl space-y-2">
-                <a className="block hover:text-green-light" href="https://instagram.com/gifkographix">
+                <a className="block hover:text-ig-default" href="https://instagram.com/gifkographix">
                   <span className="inline mr-1">
                     <InstagramIcon />
                   </span>
                   <p className="inline font-sans">@gifkographix</p>
                 </a>
-                <a className="block hover:text-green-light" href="https://twitter.com/gifkographix">
+                <a className="block hover:text-blue-twitter" href="https://twitter.com/gifkographix">
                   <span className="inline mr-1">
                     <TwitterIcon />
                   </span>
@@ -74,7 +74,7 @@ export default function Contact() {
                     <a className="hover:text-green-light" href="https://wa.me/message/EO5XDWQ5YP6RM1">
                       <WhatsAppIcon />
                     </a>
-                    <a className="hover:text-green-light" href="https://t.me/gifkographix">
+                    <a className="hover:text-blue-telegram" href="https://t.me/gifkographix">
                       <TelegramIcon />
                     </a>
                   </span>
@@ -86,7 +86,7 @@ export default function Contact() {
                   </a>
                   <span className="inline space-x-2 ml-2">
                     <WhatsAppIcon />
-                    <a className="hover:text-green-light" href="https://t.me/pngkm">
+                    <a className="hover:text-blue-telegram" href="https://t.me/pngkm">
                       <TelegramIcon />
                     </a>
                   </span>
@@ -98,7 +98,7 @@ export default function Contact() {
                   </a>
                   <span className="inline space-x-2 ml-2">
                     <WhatsAppIcon />
-                    <a className="hover:text-green-light" href="https://t.me/danie_techie">
+                    <a className="hover:text-blue-telegram" href="https://t.me/danie_techie">
                       <TelegramIcon />
                     </a>
                   </span>
@@ -111,7 +111,7 @@ export default function Contact() {
               <h1 className="text-3xl text-center sm:text-left sm:text-4xl font-serif">Address</h1>
               <hr className="my-2 w-full md:w-1/2" />
               <div className="text-center text-xl">
-                <a className="hover:text-green-light" href="https://www.google.com/maps/place/Second+Labone+St,+Accra,+Ghana/@5.5635023,-0.1717087,18z/data=!4m5!3m4!1s0xfdf9a9fc91d4e11:0xb660b6caff751604!8m2!3d5.5627548!4d-0.1700886">
+                <a className="hover:text-purple-light" href="https://www.google.com/maps/place/Second+Labone+St,+Accra,+Ghana/@5.5635023,-0.1717087,18z/data=!4m5!3m4!1s0xfdf9a9fc91d4e11:0xb660b6caff751604!8m2!3d5.5627548!4d-0.1700886">
                   <span className="inline mr-2">
                     <LocationOnIcon />
                   </span>
