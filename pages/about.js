@@ -105,9 +105,9 @@ export default function About() {
           <FadeInDiv parentPosition="3" position="4">
             <ProfileColumn
               name="Cynthia Ngouongo"
-              position="Business Developer and Finance Manager"
+              position="Business Developer & Finance Manager"
               img="Cynthia.jpg"
-              expertise="Business Development, Finance, Marketing, Voice-overs"
+              expertise="Business Development, Finance, Marketing, Writing, Voice-overs"
             />
           </FadeInDiv>
         </div>

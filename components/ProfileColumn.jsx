@@ -4,7 +4,7 @@ export default function ProfileColumn({
   name, position, img, expertise,
 }) {
   return (
-    <div className="col-span-1 flex flex-col items-center justify-top mt-4 w-64">
+    <div className="col-span-1 flex flex-col items-center justify-top mt-4 w-full px-8">
       <div id="image" className="relative object-cover object-center rounded-full h-36 lg:h-48 w-36 lg:w-48 overflow-hidden">
         <Image src={`/static/images/profiles/${img}`} layout="fill" alt={img} object-fit="cover" />
       </div>
