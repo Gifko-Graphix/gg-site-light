@@ -21,9 +21,9 @@ export default function Header() {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="me-auto text-eggshell-default gap-x-9 gap-y-5">
-            <Nav.Link as={Link} href="/portfolio"><span className="hover:text-purple-light">Portfolio</span></Nav.Link>
-            <Nav.Link as={Link} href="/about"><span className="hover:text-purple-light">About</span></Nav.Link>
-            <Nav.Link as={Link} href="/contact"><span className="hover:text-purple-light">Contact Us</span></Nav.Link>
+            <Nav.Link as={Link} href="/portfolio"><div className="cursor-pointer hover:text-purple-light">Portfolio</div></Nav.Link>
+            <Nav.Link as={Link} href="/about"><div className="cursor-pointer hover:text-purple-light">About Us</div></Nav.Link>
+            <Nav.Link as={Link} href="/contact"><div className="cursor-pointer hover:text-purple-light">Contact Us</div></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

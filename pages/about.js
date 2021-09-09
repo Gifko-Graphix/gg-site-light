@@ -46,7 +46,7 @@ export default function About() {
         <SectionHeader text="What we do" />
         <div className="container mb-16">
           <p className="text-center lg:text-2xl my-4">We offer a wide range of services, including: </p>
-          <div className="container grid md:grid-cols-4 w-11/12">
+          <div className="container grid md:grid-cols-2 xl:grid-cols-4 gap-y-4 w-11/12 justify-center">
             <FadeInDiv parentPosition="2" position="1">
               <ServiceListSection
                 title="Branding & Marketing"
@@ -77,7 +77,7 @@ export default function About() {
 
       <FadeInUpDiv position="3">
         <SectionHeader text="Our Team" />
-        <div className="container grid lg:grid-cols-4 w-11/12 mt-2 mb-16 justify-center">
+        <div className="container grid md:grid-cols-2 md:place-content-stretch xl:grid-cols-4 gap-y-4 w-11/12 mt-2 mb-16 justify-center">
           <FadeInDiv parentPosition="3" position="1">
             <ProfileColumn
               name="Peter-Newman Messan"
@@ -117,7 +117,7 @@ export default function About() {
         <div className="w-10/12 md:w-1/2 container my-5 flex flex-col items-center">
           <h1 className="text-lg font-light text-center mb-4">Now that you&apos;ve met our team, get in touch with us today to find out how we can support you in your next project!</h1>
           <Link href="/contact" passHref>
-            <button className="btn bg-eggshell-default inline font-sans hover:text-green-light hover:bg-purple-light" type="button">
+            <button className="btn bg-eggshell-default inline font-sans hover:text-purple-light hover:bg-green-light" type="button">
               Contact Us
             </button>
           </Link>
