@@ -121,7 +121,37 @@ export default function Project({
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  await dbConnect();
+  const projectFiles = []; // array of objects with project title & file names
+
+  /* find all the data in our database */
+  const result = await Item.find({});
+  const items = result.map((doc) => {
+    const item = doc.toObject();
+    item._id = item._id.toString();
+    projectFiles.push({
+      title: item.title,
+      filenames: fs.readdirSync(`${process.cwd()}/public/static${item.folder}`),
+    });
+    return item;
+  });
+
+  // Call an external API endpoint to get posts
+  // const res = await fetch('https://.../posts');
+  // const posts = await res.json();
+
+  // Get the paths we want to pre-render based on posts
+  const paths = items.map((item) => ({
+    params: { id: item.title },
+  }));
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
   await dbConnect();
 
   const result = await Item.find({ title: params.id });
