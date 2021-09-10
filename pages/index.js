@@ -24,7 +24,7 @@ const FadeInUpDiv = styled.div`
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout currentPage="Home" currentPageDescription="The home of the best design team you'll ever meet. We mean it.">
       <main role="main" className="flex flex-col h-96 items-center justify-center pt-20 my-4">
         <FadeInDownDiv>
           <h1 className="text-5xl lg:text-8xl text-center font-light mb-6 font-serif">Welcome to Gifko Graphix!</h1>

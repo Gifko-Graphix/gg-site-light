@@ -19,7 +19,7 @@ const FadeInDiv = styled.div`
 export default function Contact() {
   // make layout mobile responsive (grid becomes one col on smallest screens)
   return (
-    <Layout>
+    <Layout currentPage="Contact Us" currentPageDescription="Drop by and let's talk and design your dreams into reality!">
       <PageHeader title="We would love to hear from you!" caption="Feel free to reach out to us so we can discuss our design future together!" />
       <div className="h-full mx-2 md:mx-48 grid md:grid-cols-2 md:place-content-stretch mt-6 md:mt-12 space-y-4 md:space-y-0">
         <div className="grid md:grid-rows-2 space-y-8 md:space-y-4">

@@ -11,7 +11,7 @@ const FadeInDiv = styled.div`
       animation-fill-mode: forwards;
   `;
 
-export default function Layout({ children }) {
+export default function Layout({ children, currentPage, currentPageDescription }) {
   return (
     <>
       <Head>
@@ -26,6 +26,17 @@ export default function Layout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Expletus+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
           rel="stylesheet"
         />
+        <title>
+          Gifko Graphix |
+          {' '}
+          {currentPage}
+        </title>
+        <meta name="description" content={currentPageDescription} />
+        <meta name="keywords" content="Graphic Design, Brochures, Video Production, Digital Marketing, Business Development, Editorial Design" />
+        {/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
+        <link rel="icon" href="/static/images/General/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/static/images/General/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.webmanifest" />
       </Head>
 
       <div className="absolute overflow-auto bg-textured text-eggshell-default inset-0" id="background">

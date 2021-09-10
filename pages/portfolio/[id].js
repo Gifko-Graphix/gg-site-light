@@ -39,7 +39,7 @@ export default function Project({
   }, files,
 }) {
   return (
-    <Layout>
+    <Layout currentPage={title} currentPageDescription={`Come find out more about our ${title} project right here!`}>
       <div className="flex flex-col-reverse sm:grid sm:grid-cols-2 sm:gap-x-10 w-full h-full">
         <div>
           <FadeInDownDiv>

@@ -10,7 +10,7 @@ import PageHeader from '../components/PageHeader';
 
 export default function Portfolio({ items, projectFiles: files }) {
   return (
-    <Layout>
+    <Layout currentPage="Portfolio" currentPageDescription="Come check out our repertoire of amzing and interesting projects!">
       <PageHeader title="Check out our portfolio!" caption="Here you can see what we've been working on!" />
       <ImagePortfolioSection category="Posters" items={items} files={files} position="1" />
       <DocumentPortfolioSection category="Editorial" items={items} files={files} position="2" />

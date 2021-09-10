@@ -23,7 +23,7 @@ const FadeInUpDiv = styled.div`
 
 export default function About() {
   return (
-    <Layout>
+    <Layout currentPage="About Us" currentPageDescription="Ever wondered who Gifko Graphix is? Come find out more over here!">
       <PageHeader title="What's Gifko Graphix?" />
       <FadeInDiv parentPosition="1" position="1">
         <div className="flex flex-col items-center space-y-8 mt-4 mb-16">
