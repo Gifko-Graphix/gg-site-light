@@ -16,7 +16,11 @@ nextjsApp
       const url = new URL(req.url, 'http://w.w');
       nextjsRequestHandler(req, res, url);
     }).listen(port, (err) => {
-      if (err) throw err;
+      if (err) {
+        throw err;
+      } else {
+        console.log(`> Ready on port:${port}`);
+      }
     });
   })
   .catch((ex) => {
