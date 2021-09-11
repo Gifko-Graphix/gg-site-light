@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 8080"
+    "start": "next start -p 443"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
