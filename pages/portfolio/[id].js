@@ -38,7 +38,7 @@ const FadeInUpDiv = styled.div`
 
 export default function Project({
   item: {
-    folder, title, description, customer, category, profileLink,
+    title, description, customer, category, profileLink,
   }, files,
 }) {
   const cld = new Cloudinary({
@@ -165,6 +165,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   await dbConnect();
+  cloudinary.v2.config({
+    cloud_name: 'gifkographix', // add your cloud_name
+    api_key: '843142916393214', // add your api_key
+    api_secret: 'Rc9mVMKGClcJIfXH_QBpm2IKNKs', // add your api_secret
+    secure: true,
+  });
 
   const result = await Item.find({ title: params.id });
   const item = result[0].toObject();

@@ -5,7 +5,8 @@
         "node": true
     },
     "extends": [
-        "airbnb"
+        "airbnb",
+        "next"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -26,6 +27,7 @@
         "react/prop-types": [0],
         "no-underscore-dangle": "off",
         "no-console": "off",
+        "react/display-name": "off",
         "react/no-array-index-key": "off",
         "jsx-a11y/no-redundant-roles": "off",
         "react/jsx-props-no-spreading": "off",

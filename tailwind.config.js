@@ -28,7 +28,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: 'Expletus\\ Sans, cursive',
+      sans: 'Expletus\\ Sans, sans',
       serif: 'Cormorant\\ Garamond, serif',
     },
   },
