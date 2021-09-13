@@ -77,7 +77,7 @@ export default function Project({
           && (
             <FadeInUpDiv>
               <div className="grid md:gap-x-5 gap-y-4 sm:grid-cols-1 mt-0 sm:mt-4 sm:overflow-auto" style={{ height: '550px' }}>
-                {files.filter((filename) => filename.format === 'mp4' || 'webm').map((file) => (
+                {files.filter((filename) => filename.format === 'mp4').map((file) => (
                   <div key={uuidv4()} className="relative w-full">
                     <AdvancedVideo cldVid={cld.video(file.public_id)} controls className="flex-grow h-full w-full object-cover shadow-xl" />
                   </div>
