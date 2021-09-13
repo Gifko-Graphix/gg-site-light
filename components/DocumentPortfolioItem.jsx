@@ -3,34 +3,27 @@ import { v4 as uuidv4 } from 'uuid';
 // import { Document, Page, pdfjs } from 'react-pdf';
 // import { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import Image from 'next/image';
-import path from 'path';
+// import path from 'path';
+import { AdvancedImage } from '@cloudinary/react';
+import { Cloudinary } from '@cloudinary/url-gen';
 
-export default function DocumentPortfolioItem({ item: { folder, title }, files }) {
+export default function DocumentPortfolioItem({ item: { title }, files }) {
   const projects = files.filter((project) => project.title === title);
 
-  // const [numPages, setNumPages] = useState(null);
-  // const [pageNumber] = useState(1);
-
-  // function onDocumentLoadSuccess({ currentNumPages }) {
-  //   setNumPages(currentNumPages);
-  // }
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: 'gifkographix',
+    },
+  });
 
   return (
     <div className="w-48 h-56 inline-block">
       <div className="flex flex-col relative h-48 w-48 object-cover object-center z-10 rounded-sm border-2 border-eggshell-default overflow-hidden hover:border-green-light">
         {projects.map((project) => (
           <Carousel interval="2500" key={uuidv4()} className="relative object-center">
-            {project.filenames.filter((filename) => path.extname(filename) === '.webp').map((file) => (
+            {project.filenames.filter((filename) => filename.format === 'webp').map((file) => (
               <Carousel.Item key={uuidv4()} className="overflow-hidden w-full shadow-xl">
-                <Image
-                  src={`/static${folder}${file}`}
-                  width="190"
-                  height="190"
-                  alt={file}
-                  objectFit="cover"
-                  priority="true"
-                />
+                <AdvancedImage className="" cldImg={cld.image(file.public_id)} />
               </Carousel.Item>
             ))}
           </Carousel>

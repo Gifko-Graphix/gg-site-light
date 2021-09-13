@@ -13,7 +13,7 @@ const FadeInDiv = styled.div`
 
 export default function Layout({ children, currentPage, currentPageDescription }) {
   return (
-    <html lang="en">
+    <>
       <Head>
         <meta charSet="utf-8" />
         <meta
@@ -39,7 +39,7 @@ export default function Layout({ children, currentPage, currentPageDescription }
         <link rel="manifest" href="/manifest.webmanifest" />
       </Head>
 
-      <body className="absolute overflow-auto bg-textured text-eggshell-default inset-0 min-h-screen" id="background">
+      <div className="absolute overflow-auto bg-textured text-eggshell-default inset-0 min-h-screen" id="background">
         <Header />
         <div className="mx-8 md:mx-12 lg:mx-16 xl:mx-24 mt-24">
           {children}
@@ -55,10 +55,10 @@ export default function Layout({ children, currentPage, currentPageDescription }
           </FadeInDiv>
         </footer>
 
-      </body>
+      </div>
 
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
 
-    </html>
+    </>
   );
 }
