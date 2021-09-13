@@ -64,7 +64,7 @@ export default function Project({
           && (
             <FadeInUpDiv>
               <div className="grid md:gap-x-5 gap-y-2 sm:overflow-auto sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 " style={{ height: '550px' }}>
-                {files.map((file) => (
+                {files.filter((filename) => filename.format === 'webp').map((file) => (
                   <div key={uuidv4()} className="relative object-center col-span-1 w-full" style={{ height: '370px' }}>
                     <AdvancedImage className="" cldImg={cld.image(file.public_id)} />
                   </div>
@@ -77,7 +77,7 @@ export default function Project({
           && (
             <FadeInUpDiv>
               <div className="grid md:gap-x-5 gap-y-4 sm:grid-cols-1 mt-0 sm:mt-4 sm:overflow-auto" style={{ height: '550px' }}>
-                {files.map((file) => (
+                {files.filter((filename) => filename.format === 'mp4' || 'webm').map((file) => (
                   <div key={uuidv4()} className="relative w-full">
                     <AdvancedVideo cldVid={cld.video(file.public_id)} controls className="flex-grow h-48 object-cover shadow-xl" />
                   </div>
@@ -90,12 +90,12 @@ export default function Project({
           && (
             <FadeInUpDiv>
               <div className="grid md:gap-x-5 gap-y-4 sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 overflow-auto">
-                {files.filter((filename) => filename.format === '.pdf').map((file) => (
+                {files.filter((filename) => filename.format === 'pdf').map((file) => (
                   <div key={uuidv4()} className="relative object-cover overflow-hidden object-center col-span-full inline-block">
-                    <Worker key={uuidv4()} workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
-                      <div key={uuidv4()} style={{ height: '580px' }}>
+                    <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
+                      <div style={{ height: '580px' }}>
 
-                        <Viewer theme="dark" fileUrl={`/static${folder}${file}`} defaultScale={SpecialZoomLevel.PageFit} />
+                        <Viewer theme="dark" fileUrl={`https://res.cloudinary.com/gifkographix/image/upload/${file.public_id}`} defaultScale={SpecialZoomLevel.PageFit} />
 
                       </div>
                     </Worker>
