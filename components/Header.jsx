@@ -1,17 +1,26 @@
 import Navbar from 'react-bootstrap/Navbar';
-import Image from 'next/image';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import Link from 'next/link';
-import Logo from '../public/static/images/General/logo_t.svg';
+import { AdvancedImage } from '@cloudinary/react';
+import { Cloudinary } from '@cloudinary/url-gen';
 
 export default function Header() {
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: 'gifkographix',
+    },
+    url: {
+      secure: true, // force https, set to false to force http
+    },
+  });
+
   return (
     <Navbar className="pt-2 bg-textured font-sans" expand="lg" fixed="top">
       <Container className="shadow-none">
         <Link href="/" passHref>
           <Navbar.Brand>
-            <Image src={Logo} alt="Gifko Graphix Logo" height="40" width="80" />
+            <AdvancedImage className="h-12" cldImg={cld.image('websiteFiles/images/General/logo_t.svg')} />
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav">

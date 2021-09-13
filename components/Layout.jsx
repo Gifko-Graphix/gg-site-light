@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Script from 'next/script';
+// import Script from 'next/script';
 import styled, { keyframes } from 'styled-components';
 import { fadeIn } from 'react-animations';
 import Header from './Header';
@@ -34,8 +34,8 @@ export default function Layout({ children, currentPage, currentPageDescription }
         <meta name="description" content={currentPageDescription} />
         <meta name="keywords" content="Graphic Design, Brochures, Video Production, Digital Marketing, Business Development, Editorial Design" />
         {/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
-        <link rel="icon" href="/static/images/General/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/static/images/General/apple-touch-icon.png" />
+        <link rel="icon" href="https://res.cloudinary.com/gifkographix/image/upload/websiteFiles/images/General/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="https://res.cloudinary.com/gifkographix/image/upload/websiteFiles/images/General/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
       </Head>
 
@@ -57,7 +57,7 @@ export default function Layout({ children, currentPage, currentPageDescription }
 
       </div>
 
-      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
+      {/* <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" /> */}
 
     </>
   );

@@ -14,6 +14,9 @@ export default function ImagePortfolioItem({ item: { title }, files }) {
     cloud: {
       cloudName: 'gifkographix',
     },
+    url: {
+      secure: true, // force https, set to false to force http
+    },
   });
 
   return (

@@ -82,7 +82,7 @@ export default function About() {
             <ProfileColumn
               name="Peter-Newman Messan"
               position="Founder & Co-Lead Designer"
-              img="Peter.jpg"
+              img="Peter"
               expertise="Logo Design, Editorial Design, Web Design, Video Production, 2D (Flat) Animations, Full-Stack Web Development"
             />
           </FadeInDiv>
@@ -90,7 +90,7 @@ export default function About() {
             <ProfileColumn
               name="Daniela Tsayem"
               position="Chief Executive Officer"
-              img="Danie.jpg"
+              img="Danie"
               expertise="Digital Marketing, Branding, Editorial Design, Web Design, Frontend Web Development"
             />
           </FadeInDiv>
@@ -98,7 +98,7 @@ export default function About() {
             <ProfileColumn
               name="Edwin Agbakpe"
               position="Co-Lead Designer"
-              img="Edwin.jpg"
+              img="Edwin"
               expertise="UI/UX Design, Web Design, Editorial Design, Full-Stack Web Development"
             />
           </FadeInDiv>
@@ -106,7 +106,7 @@ export default function About() {
             <ProfileColumn
               name="Cynthia Ngouongo"
               position="Business Developer & Finance Manager"
-              img="Cynthia.jpg"
+              img="Cynthia"
               expertise="Business Development, Finance, Marketing, Writing, Voice-overs"
             />
           </FadeInDiv>

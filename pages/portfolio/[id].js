@@ -45,6 +45,9 @@ export default function Project({
     cloud: {
       cloudName: 'gifkographix',
     },
+    url: {
+      secure: true, // force https, set to false to force http
+    },
   });
 
   return (
