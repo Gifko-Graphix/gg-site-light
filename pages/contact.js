@@ -17,7 +17,6 @@ const FadeInDiv = styled.div`
   `;
 
 export default function Contact() {
-  // make layout mobile responsive (grid becomes one col on smallest screens)
   return (
     <Layout currentPage="Contact Us" currentPageDescription="Drop by and let's talk and design your dreams into reality!">
       <PageHeader title="We would love to hear from you!" caption="Feel free to reach out to us so we can discuss our design future together!" />
@@ -59,7 +58,6 @@ export default function Contact() {
             </div>
           </FadeInDiv>
         </div>
-
         <div className="grid md:grid-rows-2 space-y-8 md:space-y-4">
           <FadeInDiv position="3">
             <div className="flex flex-col items-center justify-top rounded-md" id="phone">
@@ -128,7 +126,6 @@ export default function Contact() {
           </FadeInDiv>
         </div>
       </div>
-
     </Layout>
   );
 }

@@ -1,11 +1,6 @@
-/* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable no-underscore-dangle */
-// import Image from 'next/image';
-// import fs from 'fs';
-// import ReactPlayer from 'react-player';
 import { v4 as uuidv4 } from 'uuid';
 import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
-// import path from 'path';
 import styled, { keyframes } from 'styled-components';
 import { fadeInDown, fadeIn, fadeInUp } from 'react-animations';
 import cloudinary from 'cloudinary';
@@ -15,7 +10,8 @@ import Layout from '../../components/Layout';
 import dbConnect from '../../utils/dbConnect';
 import Item from '../../models/Item';
 import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
+
+const { CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET } = process.env;
 
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
 const FadeInDownDiv = styled.div`
@@ -94,9 +90,11 @@ export default function Project({
                   <div key={uuidv4()} className="relative object-cover overflow-hidden object-center col-span-full inline-block">
                     <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                       <div style={{ height: '580px' }}>
-
-                        <Viewer theme="dark" fileUrl={`https://res.cloudinary.com/gifkographix/image/upload/${file.public_id}`} defaultScale={SpecialZoomLevel.PageFit} />
-
+                        <Viewer
+                          theme="dark"
+                          fileUrl={`https://res.cloudinary.com/gifkographix/image/upload/${file.public_id}`}
+                          defaultScale={SpecialZoomLevel.PageFit}
+                        />
                       </div>
                     </Worker>
                   </div>
@@ -135,58 +133,37 @@ export default function Project({
 
 export async function getStaticPaths() {
   await dbConnect();
-  // const projectFiles = []; // array of objects with project title & file names
-
   /* find all the data in our database */
   const result = await Item.find({});
   const items = result.map((doc) => {
     const item = doc.toObject();
     item._id = item._id.toString();
-    // projectFiles.push({
-    //   title: item.title,
-    //   filenames: fs.readdirSync(`${process.cwd()}/public/static${item.folder}`),
-    // });
     return item;
   });
-
-  // Call an external API endpoint to get posts
-  // const res = await fetch('https://.../posts');
-  // const posts = await res.json();
-
-  // Get the paths we want to pre-render based on posts
   const paths = items.map((item) => ({
     params: { id: item.title },
   }));
-
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
   await dbConnect();
   cloudinary.v2.config({
-    cloud_name: 'gifkographix', // add your cloud_name
-    api_key: '843142916393214', // add your api_key
-    api_secret: 'Rc9mVMKGClcJIfXH_QBpm2IKNKs', // add your api_secret
+    cloud_name: CLOUD_NAME,
+    api_key: CLOUD_API_KEY,
+    api_secret: CLOUD_API_SECRET,
     secure: true,
   });
-
   const result = await Item.find({ title: params.id });
   const item = result[0].toObject();
   item._id = item._id.toString();
-
-  // const files = fs.readdirSync(`${process.cwd()}/public/static${item.folder}`);
-
   const response = await cloudinary.v2.search.expression(
     `folder:websiteFiles${item.folder}*`, // add your folder
   ).sort_by('public_id', 'desc').execute();
-
   const files = response.resources.map((file) => (
     {
       public_id: file.public_id,
       format: file.format,
     }));
-
   return { props: { item, files } };
 }

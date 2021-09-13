@@ -41,7 +41,6 @@ export default function About() {
           </p>
         </div>
       </FadeInDiv>
-
       <FadeInUpDiv position="2">
         <SectionHeader text="What we do" />
         <div className="container mb-16">
@@ -74,7 +73,6 @@ export default function About() {
           </div>
         </div>
       </FadeInUpDiv>
-
       <FadeInUpDiv position="3">
         <SectionHeader text="Our Team" />
         <div className="container grid md:grid-cols-2 md:place-content-stretch xl:grid-cols-4 gap-y-4 w-11/12 mt-2 mb-16 justify-center">
@@ -112,7 +110,6 @@ export default function About() {
           </FadeInDiv>
         </div>
       </FadeInUpDiv>
-
       <FadeInUpDiv position="4">
         <div className="w-10/12 md:w-1/2 container my-5 flex flex-col items-center">
           <h1 className="text-lg font-light text-center mb-4">Now that you&apos;ve met our team, get in touch with us today to find out how we can support you in your next project!</h1>
@@ -123,7 +120,6 @@ export default function About() {
           </Link>
         </div>
       </FadeInUpDiv>
-
     </Layout>
   );
 }

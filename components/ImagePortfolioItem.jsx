@@ -1,15 +1,11 @@
-// import Image from 'next/image';
 import Carousel from 'react-bootstrap/Carousel';
 import { v4 as uuidv4 } from 'uuid';
-// import path from 'path';
 import React from 'react';
 import { AdvancedImage } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
 
 export default function ImagePortfolioItem({ item: { title }, files }) {
   const projects = files.filter((project) => project.title === title);
-  // console.log('projects');
-  // console.log(files);
   const cld = new Cloudinary({
     cloud: {
       cloudName: 'gifkographix',

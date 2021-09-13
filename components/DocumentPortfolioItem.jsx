@@ -1,15 +1,11 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { v4 as uuidv4 } from 'uuid';
-// import { Document, Page, pdfjs } from 'react-pdf';
-// import { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-// import path from 'path';
 import { AdvancedImage } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
 
 export default function DocumentPortfolioItem({ item: { title }, files }) {
   const projects = files.filter((project) => project.title === title);
-
   const cld = new Cloudinary({
     cloud: {
       cloudName: 'gifkographix',
@@ -31,7 +27,6 @@ export default function DocumentPortfolioItem({ item: { title }, files }) {
             ))}
           </Carousel>
         ))}
-
       </div>
       <div className="mt-2">
         <h1 className="text-xl text-gray-700">{title}</h1>

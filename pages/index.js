@@ -32,7 +32,6 @@ export default function Home() {
         <FadeInDiv>
           <h1 className="my-4 text-center text-2xl font-sans">Check out our portfolio or contact us today!</h1>
         </FadeInDiv>
-
         <FadeInUpDiv>
           <div className="lg:space-x-4 space-y-4 lg:space-y-0 flex flex-col lg:flex-row items-center mt-4 mb-12">
             <Link href="/portfolio" passHref>

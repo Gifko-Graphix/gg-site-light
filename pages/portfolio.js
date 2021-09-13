@@ -1,4 +1,3 @@
-// import fs from 'fs';
 import React from 'react';
 import cloudinary from 'cloudinary';
 import Layout from '../components/Layout';
@@ -8,6 +7,8 @@ import ImagePortfolioSection from '../components/ImagePortfolioSection';
 import VideoPortfolioSection from '../components/VideoPortfolioSection';
 import DocumentPortfolioSection from '../components/DocumentPortfolioSection';
 import PageHeader from '../components/PageHeader';
+
+const { CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET } = process.env;
 
 export default function Portfolio({ items, projectFiles: files }) {
   return (
@@ -23,15 +24,13 @@ export default function Portfolio({ items, projectFiles: files }) {
 
 export async function getStaticProps() {
   cloudinary.v2.config({
-    cloud_name: 'gifkographix', // add your cloud_name
-    api_key: '843142916393214', // add your api_key
-    api_secret: 'Rc9mVMKGClcJIfXH_QBpm2IKNKs', // add your api_secret
+    cloud_name: CLOUD_NAME,
+    api_key: CLOUD_API_KEY,
+    api_secret: CLOUD_API_SECRET,
     secure: true,
   });
-
   await dbConnect();
   const projectFiles = []; // array of objects with project title & file names
-
   /* find all the data in our database */
   const result = await Item.find({});
   const items = result.map((doc) => {
@@ -39,11 +38,6 @@ export async function getStaticProps() {
     item._id = item._id.toString();
     return item;
   });
-
-  // cloudinary.v2.search.expression(
-  //   'folder:websiteFiles/*', // add your folder
-  // ).sort_by('public_id', 'desc').execute().then((response) => console.log(response));
-
   await Promise.all(items.map(async (item) => {
     const response = await cloudinary.v2.search.expression(
       `folder:websiteFiles${item.folder}*`, // add your folder
