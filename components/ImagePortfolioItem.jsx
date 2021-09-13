@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import React from 'react';
 import { AdvancedImage } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
+import { thumbnail } from '@cloudinary/url-gen/actions/resize';
+// import Image from 'next/image';
 
 export default function ImagePortfolioItem({ item: { title }, files }) {
   const projects = files.filter((project) => project.title === title);
@@ -17,12 +19,15 @@ export default function ImagePortfolioItem({ item: { title }, files }) {
 
   return (
     <div className="w-48 h-56 inline-block">
-      <div className="relative h-48 w-48 object-cover object-center z-10 rounded-sm border-2 overflow-hidden border-eggshell-default hover:border-green-light">
+      <div className="relative h-48 w-48 object-cover z-10 rounded-sm border-2 overflow-hidden border-eggshell-default hover:border-green-light">
         {projects.map((project) => (
-          <Carousel interval="2500" key={uuidv4()} className="relative object-center">
+          <Carousel interval="2500" key={uuidv4()} className="relative ">
             {project.filenames.filter((filename) => filename.format === 'webp').map((file) => (
-              <Carousel.Item key={uuidv4()} className="w-full shadow-xl">
-                <AdvancedImage className="" cldImg={cld.image(file.public_id)} />
+              <Carousel.Item key={uuidv4()} className="shadow-xl">
+                <AdvancedImage
+                  className="object-cover object-center h-full"
+                  cldImg={cld.image(file.public_id).resize(thumbnail().width(190).height(190))}
+                />
               </Carousel.Item>
             ))}
           </Carousel>

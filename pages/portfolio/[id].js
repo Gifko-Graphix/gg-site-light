@@ -6,6 +6,7 @@ import { fadeInDown, fadeIn, fadeInUp } from 'react-animations';
 import cloudinary from 'cloudinary';
 import { AdvancedImage, AdvancedVideo } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
+import { thumbnail } from '@cloudinary/url-gen/actions/resize';
 import Layout from '../../components/Layout';
 import dbConnect from '../../utils/dbConnect';
 import Item from '../../models/Item';
@@ -62,7 +63,7 @@ export default function Project({
               <div className="grid md:gap-x-5 gap-y-2 sm:overflow-auto sm:grid-cols-1 xl:grid-cols-2 mt-0 sm:mt-4 " style={{ height: '550px' }}>
                 {files.filter((filename) => filename.format === 'webp').map((file) => (
                   <div key={uuidv4()} className="relative object-center col-span-1 w-full" style={{ height: '370px' }}>
-                    <AdvancedImage className="" cldImg={cld.image(file.public_id)} />
+                    <AdvancedImage className="object-contain object-center h-full" cldImg={cld.image(file.public_id).resize(thumbnail().height(370))} />
                   </div>
                 ))}
               </div>
@@ -75,7 +76,7 @@ export default function Project({
               <div className="grid md:gap-x-5 gap-y-4 sm:grid-cols-1 mt-0 sm:mt-4 sm:overflow-auto" style={{ height: '550px' }}>
                 {files.filter((filename) => filename.format === 'mp4' || 'webm').map((file) => (
                   <div key={uuidv4()} className="relative w-full">
-                    <AdvancedVideo cldVid={cld.video(file.public_id)} controls className="flex-grow h-48 object-cover shadow-xl" />
+                    <AdvancedVideo cldVid={cld.video(file.public_id)} controls className="flex-grow h-full w-full object-cover shadow-xl" />
                   </div>
                 ))}
               </div>

@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Carousel } from 'react-bootstrap';
 import { AdvancedImage } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
+import { thumbnail } from '@cloudinary/url-gen/actions/resize';
 
 export default function DocumentPortfolioItem({ item: { title }, files }) {
   const projects = files.filter((project) => project.title === title);
@@ -21,8 +22,11 @@ export default function DocumentPortfolioItem({ item: { title }, files }) {
         {projects.map((project) => (
           <Carousel interval="2500" key={uuidv4()} className="relative object-center">
             {project.filenames.filter((filename) => filename.format === 'webp').map((file) => (
-              <Carousel.Item key={uuidv4()} className="overflow-hidden w-full shadow-xl">
-                <AdvancedImage className="" cldImg={cld.image(file.public_id)} />
+              <Carousel.Item key={uuidv4()} className="shadow-xl">
+                <AdvancedImage
+                  className="object-cover object-center h-full"
+                  cldImg={cld.image(file.public_id).resize(thumbnail().width(190).height(190))}
+                />
               </Carousel.Item>
             ))}
           </Carousel>
