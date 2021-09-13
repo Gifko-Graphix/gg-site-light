@@ -7,10 +7,12 @@ import cloudinary from 'cloudinary';
 import { AdvancedImage, AdvancedVideo } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import { thumbnail } from '@cloudinary/url-gen/actions/resize';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import Layout from '../../components/Layout';
 import dbConnect from '../../utils/dbConnect';
 import Item from '../../models/Item';
 import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 const { CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET } = process.env;
 
@@ -38,6 +40,7 @@ export default function Project({
     title, description, customer, category, profileLink,
   }, files,
 }) {
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const cld = new Cloudinary({
     cloud: {
       cloudName: 'gifkographix',
@@ -95,6 +98,7 @@ export default function Project({
                           theme="dark"
                           fileUrl={`https://res.cloudinary.com/gifkographix/image/upload/${file.public_id}`}
                           defaultScale={SpecialZoomLevel.PageFit}
+                          plugins={[defaultLayoutPluginInstance]}
                         />
                       </div>
                     </Worker>
