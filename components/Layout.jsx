@@ -15,6 +15,14 @@ export default function Layout({ children, currentPage, currentPageDescription }
   return (
     <>
       <Head>
+      {/* <!-- Google Tag Manager --> */}
+        <script dangerouslySetInnerHTML={{ __html:`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PV6LX43');` }}>
+        </script>
+{/* <!-- End Google Tag Manager --> */}
         <meta charSet="utf-8" />
         <meta
           name="viewport"
@@ -38,6 +46,12 @@ export default function Layout({ children, currentPage, currentPageDescription }
         <link rel="apple-touch-icon" href="https://res.cloudinary.com/gifkographix/image/upload/websiteFiles/images/General/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
       </Head>
+      {/* <!-- Google Tag Manager (noscript) --> */}
+      <noscript 
+        dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV6LX43"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>`}}>
+      </noscript>
+      {/* <!-- End Google Tag Manager (noscript) --> */}
       <div className="absolute overflow-auto bg-textured text-eggshell-default inset-0 min-h-screen" id="background">
         <Header />
         <div className="mx-8 md:mx-12 lg:mx-16 xl:mx-24 mt-24">
