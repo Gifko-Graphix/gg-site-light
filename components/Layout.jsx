@@ -49,14 +49,6 @@ export default function Layout({ children, currentPage, currentPageDescription }
         <link rel="apple-touch-icon" href="https://res.cloudinary.com/gifkographix/image/upload/websiteFiles/images/General/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
       </Head>
-      {/* <!-- Google Tag Manager (noscript) --> */}
-      <noscript
-        dangerouslySetInnerHTML={{
-          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV6LX43"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-        }}
-      />
-      {/* <!-- End Google Tag Manager (noscript) --> */}
       <div className="absolute overflow-auto bg-textured text-eggshell-default inset-0 min-h-screen" id="background">
         <Header />
         <div className="mx-8 md:mx-12 lg:mx-16 xl:mx-24 mt-24">
