@@ -20,10 +20,12 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "cypress"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
+        "template-curly-spacing" : "off",
         "react/prop-types": [0],
         "no-underscore-dangle": "off",
         "no-console": "off",
