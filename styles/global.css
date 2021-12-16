@@ -15,4 +15,6 @@
 .react-pdf__Document {
     height: 100% !important;
 }
+
 @tailwind utilities;
+

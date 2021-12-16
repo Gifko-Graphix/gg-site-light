@@ -1,17 +1,16 @@
-.snowflake 
-{
-    position: absolute; // [1] Break the layout flow
-    color: white; // [2] Set the color for the snowflake
-    &:after {
-      content: "\2744"; // [3] Give it some shape
-    }
-}
+// .snowflake {
+//   position: absolute; // [1] Break the layout flow
+//   color: white; // [2] Set the color for the snowflake
+//   &:after {
+//     content: "\2744"; // [3] Give it some shape
+//   }
+// }
 
 // Total numner of snowflakes
-$snowflake: 250;
+$snowflakes: 100;
 
 // Randomize the animation and positioning for each snowflake
-@for $i from 1 through $snowflake {
+@for $i from 1 through 10 {
   // Position of the snowflake on the y-axis
   $top: (random(50) + 50) * 1%;
 
@@ -25,12 +24,15 @@ $snowflake: 250;
   $duration: random(6) + 4s;
 
   // Size of the flake
-  $size: random(24);
+  $size: 10;
 
    /* Snowflake ##{$i} */
   .snowflake:nth-of-type(#{$i}) {
     animation-name: snowflake-#{$i};
     animation-delay: $delay;
+
+    position: absolute; // [1] Break the layout flow
+    color: white; 
 
     // Play the animation for anything between 5-10 seconds
     animation-duration: $duration;
@@ -39,6 +41,7 @@ $snowflake: 250;
     top: -$top;
     &:after {
       font-size: $size * 1px;
+      content: "\2744";
     }
   }
   

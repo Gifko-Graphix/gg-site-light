@@ -1,9 +1,10 @@
+import styled, { keyframes } from 'styled-components';
+
 /* eslint-disable react/no-danger */
 /* eslint-disable @next/next/no-page-custom-font */
 import Head from 'next/head';
-import styled, { keyframes } from 'styled-components';
-import { fadeIn } from 'react-animations';
 import Header from './Header';
+import { fadeIn } from 'react-animations';
 
 const fadeInAnimation = keyframes`${fadeIn}`;
 const FadeInDiv = styled.div`
@@ -54,8 +55,17 @@ export default function Layout({ children, currentPage, currentPageDescription }
         <div className="mx-8 md:mx-12 lg:mx-16 xl:mx-24 mt-24">
           {children}
         </div>
-        <div className="snowflake">
-        </div>
+        <div className="snowflake" />
+        <div className="snowflake" />
+        <div className="snowflake" />
+        <div className="snowflake" />
+        <div className="snowflake" />
+        <div className="snowflake" />
+        <div className="snowflake" />
+        <div className="snowflake" />
+        <div className="snowflake" />
+        <div className="snowflake" />
+        <div className="snowflake" />
         <footer className="relative self-end bottom-0 w-full flex flex-row items-center justify-center text-gray-300 py-10 px-8 text-center text-xs">
           <FadeInDiv>
             Copyright &copy;
