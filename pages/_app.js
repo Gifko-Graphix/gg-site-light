@@ -2,6 +2,7 @@ import Script from 'next/script';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/global.css';
+import '../styles/xmas_theme.scss';
 
 function MyApp({ Component, pageProps }) {
   return (

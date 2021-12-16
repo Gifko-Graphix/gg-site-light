@@ -54,6 +54,8 @@ export default function Layout({ children, currentPage, currentPageDescription }
         <div className="mx-8 md:mx-12 lg:mx-16 xl:mx-24 mt-24">
           {children}
         </div>
+        <div className="snowflake">
+        </div>
         <footer className="relative self-end bottom-0 w-full flex flex-row items-center justify-center text-gray-300 py-10 px-8 text-center text-xs">
           <FadeInDiv>
             Copyright &copy;
