@@ -126,6 +126,20 @@ export default function Contact() {
           </FadeInDiv>
         </div>
       </div>
+      <div className="flex flex-col items-center" id="contact_form">
+        <form action="/api/contact/" method="POST" className="w-3/4">
+          <h1 className="text-center text-2xl my-10">Send us a message today!</h1>
+          <input type="text" name="firstName" className="form-control my-3 bg-transparent text-white" placeholder="First Name" required />
+          <input type="text" name="lastName" className="form-control my-3 bg-transparent text-white" placeholder="Last Name" required />
+          <input type="email" name="email" className="form-control my-3 bg-transparent text-white" placeholder="Email Address" required />
+          <textarea name="message" className="form-control bg-transparent w-full p-2 text-white" placeholder="What would you like to tell us?" rows="5" required />
+          <div className="lg:space-x-4 space-y-4 lg:space-y-0 flex flex-col lg:flex-row items-center justify-center mt-4 mb-12">
+            <button className="btn bg-eggshell-default inline font-sans hover:text-purple-light hover:bg-green-light" type="submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </Layout>
   );
 }
