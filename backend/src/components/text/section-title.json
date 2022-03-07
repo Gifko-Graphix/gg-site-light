@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_text_section_titles",
+  "info": {
+    "displayName": "Section_Title",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

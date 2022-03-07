@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_lists_titled_lists",
+  "info": {
+    "displayName": "Titled_List",
+    "icon": "ellipsis-v"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "list": {
+      "type": "richtext"
+    }
+  }
+}

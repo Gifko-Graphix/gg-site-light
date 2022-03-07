@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_profiles_profile_components",
+  "info": {
+    "displayName": "Profile_Component",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "display_photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
