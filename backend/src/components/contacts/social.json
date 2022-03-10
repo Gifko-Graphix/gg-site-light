@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_contacts_socials",
+  "info": {
+    "displayName": "Social",
+    "icon": "mobile-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
