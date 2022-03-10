@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_contacts_phones",
+  "info": {
+    "displayName": "Phone",
+    "icon": "phone-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "isOnWhatsapp": {
+      "type": "boolean",
+      "required": true
+    },
+    "isOnTelegram": {
+      "type": "boolean",
+      "required": true
+    },
+    "isOnPhone": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

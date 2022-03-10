@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_text_section_richtexts",
+  "info": {
+    "displayName": "Section_Richtext",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
